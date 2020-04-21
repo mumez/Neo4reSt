@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo4reSt-Demo-Dumper",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"db",
+		"count"
+	],
+	"name" : "N4ObjectDumper",
+	"type" : "normal"
+}

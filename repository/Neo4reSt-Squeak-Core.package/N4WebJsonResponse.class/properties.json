@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "WebResponse",
+	"category" : "Neo4reSt-Squeak-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "N4WebJsonResponse",
+	"type" : "normal"
+}

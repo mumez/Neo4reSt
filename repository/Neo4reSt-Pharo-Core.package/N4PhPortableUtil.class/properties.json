@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "N4PortableUtil",
+	"category" : "Neo4reSt-Pharo-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"httpClient"
+	],
+	"name" : "N4PhPortableUtil",
+	"type" : "normal"
+}

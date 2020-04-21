@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "N4Indexes",
+	"category" : "Neo4reSt-IndexModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "N4RelationshipIndexes",
+	"type" : "normal"
+}

@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo4reSt-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"baseUrlString",
+		"components"
+	],
+	"name" : "N4Url",
+	"type" : "normal"
+}

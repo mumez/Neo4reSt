@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "mu 2/20/2012 00:33",
+	"super" : "TestCase",
+	"category" : "Neo4reSt-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"db",
+		"initialNodeForTest"
+	],
+	"name" : "N4GraphModelTest",
+	"type" : "normal"
+}

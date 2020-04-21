@@ -1,0 +1,34 @@
+{
+	"instance" : {
+		"httpJsonPost:content:" : "mu 11/27/2011 22:41",
+		"httpJsonPost:" : "mu 11/27/2011 22:41",
+		"deleteJsonFrom:" : "mu 11/27/2011 22:41",
+		"readJsonFrom:" : "mu 11/27/2011 22:42",
+		"dictionaryFromAssociations:" : "mu 4/22/2012 22:33",
+		"httpJsonDelete:" : "mu 11/27/2011 22:41",
+		"pickIdFrom:" : "mu 12/9/2011 00:35",
+		"getJsonOrEmptyFrom:" : "mu 11/29/2011 23:03",
+		"postJsonTo:" : "mu 11/27/2011 22:41",
+		"getJsonFrom:" : "mu 11/27/2011 22:42",
+		"postJson:to:" : "mu 11/27/2011 22:40",
+		"signalErrorBasedOn:" : "mu 11/27/2011 22:42",
+		"convertToNative:using:" : "mu 6/2/2012 21:54",
+		"httpJsonGet:" : "mu 11/29/2011 22:59",
+		"httpSetAuthenticationInfo" : "MasashiUmezawa 7/5/2015 22:20",
+		"asProperties:" : "mu 2/13/2012 00:51",
+		"release" : "mu 6/2/2012 21:45",
+		"readJsonFromResponse:" : "mu 12/23/2011 13:05",
+		"settings" : "MasashiUmezawa 7/5/2015 22:22",
+		"stringFrom:" : "MasashiUmezawa 1/20/2013 23:25",
+		"urlEncodedStringFrom:" : "MasashiUmezawa 1/20/2013 23:32",
+		"jsonStringFrom:" : "mu 11/27/2011 22:42",
+		"string:beginsWith:" : "mu 11/27/2011 23:58"
+	},
+	"class" : {
+		"default" : "MasashiUmezawa 10/30/2017 16:38",
+		"initialize" : "mu 11/27/2011 12:39",
+		"activate" : "mu 11/27/2011 12:39",
+		"defaultClass" : "MasashiUmezawa 10/30/2017 16:25",
+		"initDefault" : "mu 11/27/2011 12:39"
+	}
+}

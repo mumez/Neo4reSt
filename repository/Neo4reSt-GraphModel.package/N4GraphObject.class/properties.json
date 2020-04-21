@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo4reSt-GraphModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"db",
+		"restClient",
+		"id",
+		"settings"
+	],
+	"name" : "N4GraphObject",
+	"type" : "normal"
+}

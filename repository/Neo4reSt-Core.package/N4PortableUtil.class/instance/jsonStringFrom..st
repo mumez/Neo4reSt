@@ -1,0 +1,3 @@
+read/write
+jsonStringFrom: assocs
+	

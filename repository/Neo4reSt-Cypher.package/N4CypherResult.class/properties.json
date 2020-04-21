@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo4reSt-Cypher",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"columns",
+		"data"
+	],
+	"name" : "N4CypherResult",
+	"type" : "normal"
+}

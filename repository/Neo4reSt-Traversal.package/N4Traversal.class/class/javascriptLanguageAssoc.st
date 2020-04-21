@@ -1,0 +1,3 @@
+constants
+javascriptLanguageAssoc
+	^'language' -> 'javascript'

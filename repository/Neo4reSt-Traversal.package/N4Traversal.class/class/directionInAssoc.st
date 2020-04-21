@@ -1,0 +1,3 @@
+constants
+directionInAssoc
+	^'direction' -> 'in'

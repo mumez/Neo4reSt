@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Error",
+	"category" : "Neo4reSt-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"properties",
+		"response"
+	],
+	"name" : "N4Error",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "N4PortableUtil",
+	"category" : "Neo4reSt-Squeak-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"httpClient"
+	],
+	"name" : "N4SqPortableUtil",
+	"type" : "normal"
+}

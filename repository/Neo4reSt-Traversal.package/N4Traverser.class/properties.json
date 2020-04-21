@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo4reSt-Traversal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"traversal",
+		"json",
+		"index"
+	],
+	"name" : "N4Traverser",
+	"type" : "normal"
+}

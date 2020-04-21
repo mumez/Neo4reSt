@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "N4GraphObject",
+	"category" : "Neo4reSt-GraphModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"type",
+		"direction",
+		"startNodeId",
+		"endNodeId"
+	],
+	"name" : "N4Relationship",
+	"type" : "normal"
+}

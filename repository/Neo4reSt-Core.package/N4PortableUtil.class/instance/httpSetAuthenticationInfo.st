@@ -1,0 +1,2 @@
+actions-http
+httpSetAuthenticationInfo

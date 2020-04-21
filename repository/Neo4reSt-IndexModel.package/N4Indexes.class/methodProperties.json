@@ -1,0 +1,21 @@
+{
+	"instance" : {
+		"db" : "BernatRomagosa 12/7/2012 13:00",
+		"removeAllKeyed:value:for:" : "mu 2/19/2012 16:27",
+		"restClient" : "mu 12/21/2011 00:55",
+		"detectWithKey:value:" : "mu 12/24/2011 22:57",
+		"detectWith:" : "mu 2/16/2012 23:58",
+		"name" : "mu 12/21/2011 00:52",
+		"removeAllKeyed:for:" : "mu 2/19/2012 16:26",
+		"indexer:" : "mu 12/21/2011 00:52",
+		"addKey:value:for:" : "mu 12/21/2011 01:01",
+		"name:" : "mu 12/21/2011 00:47",
+		"removeAllFor:" : "mu 2/19/2012 16:24",
+		"indexer" : "mu 12/21/2011 00:52",
+		"delete" : "mu 2/19/2012 16:28"
+	},
+	"class" : {
+		"on:named:" : "mu 12/21/2011 00:53",
+		"on:" : "mu 12/21/2011 00:52"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"instance" : {
+		"db" : "mu 12/23/2011 21:52",
+		"count:" : "mu 12/23/2011 22:16",
+		"dumpObject:to:" : "mu 12/23/2011 23:23",
+		"labelStartNode:" : "mu 12/23/2011 22:57",
+		"dump:" : "mu 12/23/2011 22:58",
+		"checkTooManyRecursion" : "mu 12/23/2011 22:17",
+		"count" : "mu 12/23/2011 22:16",
+		"dumpProperty:named:to:" : "mu 2/5/2012 16:30",
+		"db:" : "mu 12/23/2011 21:52",
+		"shouldDumpAsProperty:" : "mu 12/23/2011 23:26",
+		"dumpNextObject:named:to:" : "mu 12/23/2011 23:22",
+		"dumpClassInfo:to:" : "mu 12/23/2011 22:44"
+	},
+	"class" : {
+		"example1" : "mu 2/16/2012 23:38",
+		"dump:" : "mu 12/23/2011 22:38",
+		"on:" : "mu 12/23/2011 22:19"
+	}
+}

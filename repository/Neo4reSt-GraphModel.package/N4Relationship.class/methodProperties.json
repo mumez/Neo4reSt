@@ -1,0 +1,27 @@
+{
+	"instance" : {
+		"startNode" : "mu 12/24/2011 23:33",
+		"type" : "mu 12/11/2011 00:14",
+		"type:" : "mu 12/11/2011 00:14",
+		"elementName" : "mu 12/24/2011 15:19",
+		"delete" : "mu 12/13/2011 23:01",
+		"properties:" : "mu 12/10/2011 23:44",
+		"uri" : "mu 4/22/2012 22:44",
+		"properties" : "mu 12/10/2011 23:44",
+		"direction" : "mu 12/11/2011 00:14",
+		"propertyAt:put:" : "mu 12/10/2011 23:44",
+		"endNodeId:" : "mu 12/14/2011 00:01",
+		"propertyAt:" : "mu 6/5/2012 09:29",
+		"startNodeId" : "mu 12/14/2011 00:01",
+		"endNodeId" : "mu 12/14/2011 00:01",
+		"removePropertyAt:" : "mu 12/13/2011 23:08",
+		"startNodeId:" : "mu 12/14/2011 00:01",
+		"direction:" : "mu 12/11/2011 00:14",
+		"printOn:" : "mu 12/24/2011 15:21",
+		"endNode" : "mu 12/24/2011 23:24"
+	},
+	"class" : {
+		"json:for:" : "mu 1/22/2012 14:51",
+		"json:" : "mu 2/19/2012 21:17"
+	}
+}

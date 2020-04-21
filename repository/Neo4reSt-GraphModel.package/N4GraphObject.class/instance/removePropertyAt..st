@@ -1,0 +1,2 @@
+properties
+removePropertyAt: propName

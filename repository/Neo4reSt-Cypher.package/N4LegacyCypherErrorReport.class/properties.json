@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "N4LegacyCypherResponse",
+	"category" : "Neo4reSt-Cypher",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"message",
+		"exception",
+		"stackTrace"
+	],
+	"name" : "N4LegacyCypherErrorReport",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+constants
+directionOutAssoc
+	^'direction' -> 'out'

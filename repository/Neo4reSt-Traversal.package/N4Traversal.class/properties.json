@@ -1,0 +1,21 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo4reSt-Traversal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"startNode",
+		"db",
+		"returnType",
+		"order",
+		"relationships",
+		"uniqueness",
+		"pruneEvaluator",
+		"returnFilter",
+		"maxDepth"
+	],
+	"name" : "N4Traversal",
+	"type" : "normal"
+}

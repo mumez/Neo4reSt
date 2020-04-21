@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "N4GraphObject",
+	"category" : "Neo4reSt-GraphModel",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "N4Node",
+	"type" : "normal"
+}

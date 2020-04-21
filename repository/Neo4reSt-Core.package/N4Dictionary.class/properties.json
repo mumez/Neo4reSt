@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Dictionary",
+	"category" : "Neo4reSt-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "N4Dictionary",
+	"type" : "normal"
+}

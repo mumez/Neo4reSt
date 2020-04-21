@@ -1,0 +1,3 @@
+constants
+directionAllAssoc
+	^'direction' -> 'all'

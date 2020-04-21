@@ -1,0 +1,3 @@
+constants
+nameNoneAssoc
+	^'name' -> 'none'

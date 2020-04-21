@@ -1,0 +1,2 @@
+read/write
+readJsonFromResponse: httpResponse

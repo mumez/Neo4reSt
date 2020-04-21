@@ -1,0 +1,3 @@
+constants
+nameAllAssoc
+	^'name' -> 'all'

@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo4reSt-Core",
+	"classinstvars" : [
+		"default"
+	],
+	"pools" : [ ],
+	"classvars" : [
+		"ActualClass"
+	],
+	"instvars" : [ ],
+	"name" : "N4PortableUtil",
+	"type" : "normal"
+}

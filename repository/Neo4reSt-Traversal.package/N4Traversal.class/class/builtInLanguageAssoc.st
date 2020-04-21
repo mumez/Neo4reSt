@@ -1,0 +1,3 @@
+constants
+builtInLanguageAssoc
+	^'language' -> 'builtin'
