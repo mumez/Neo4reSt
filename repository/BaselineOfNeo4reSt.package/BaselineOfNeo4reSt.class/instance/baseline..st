@@ -35,6 +35,6 @@ baseline: spec
 	spec for: #pharo do:[
 		spec baseline: 'NeoJSON' with: [ spec repository: 'github://svenvc/NeoJSON/repository' ].
 		spec package: 'Neo4reSt-Core' with: [spec includes: 'Neo4reSt-Pharo-Core'].
-		spec package: 'Neo4reSt-Pharo-Core' with: [ spec requires: #('Neo4reSt-Core' 'Neo JSON')].
+		spec package: 'Neo4reSt-Pharo-Core' with: [ spec requires: #('Neo4reSt-Core' 'NeoJSON')].
 		spec group: 'Core' with: #('Neo4reSt-Pharo-Core').	
 	].
