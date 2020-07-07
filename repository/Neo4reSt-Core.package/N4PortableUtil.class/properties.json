@@ -9,7 +9,9 @@
 	"classvars" : [
 		"ActualClass"
 	],
-	"instvars" : [ ],
+	"instvars" : [
+		"settings"
+	],
 	"name" : "N4PortableUtil",
 	"type" : "normal"
 }

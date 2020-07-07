@@ -1,29 +1,24 @@
 {
 	"instance" : {
-		"ensuredHttpClient" : "MasashiUmezawa 6/2/2012 22:56",
-		"httpClient" : "MasashiUmezawa 6/2/2012 22:55",
-		"httpJsonPost:content:" : "MasashiUmezawa 7/3/2017 13:26",
-		"string:beginsWith:" : "mu 11/27/2011 23:58",
-		"httpJsonPost:" : "MasashiUmezawa 7/3/2017 13:34",
+		"httpJsonPut:content:on:" : "MasashiUmezawa 7/7/2020 17:12",
+		"httpSetAuthenticationInfoTo:" : "MasashiUmezawa 7/7/2020 16:27",
+		"httpJsonPost:content:on:" : "MasashiUmezawa 7/7/2020 17:13",
+		"httpJsonPost:on:" : "MasashiUmezawa 7/7/2020 17:08",
 		"nativeStringFrom:" : "MasashiUmezawa 6/2/2012 22:57",
 		"dictionaryFromAssociations:" : "MasashiUmezawa 4/22/2012 22:43",
 		"readJsonFrom:" : "MasashiUmezawa 8/29/2017 14:16",
-		"httpJsonDelete:" : "MasashiUmezawa 1/14/2016 17:11",
-		"createHttpClient" : "MasashiUmezawa 6/2/2012 22:56",
+		"httpJsonDelete:on:" : "MasashiUmezawa 7/7/2020 17:07",
+		"createHttpClient" : "MasashiUmezawa 7/7/2020 17:03",
 		"postJsonTo:" : "mu 11/27/2011 16:41",
 		"getJsonFrom:" : "mu 12/23/2011 13:05",
 		"postJson:to:" : "mu 11/27/2011 16:39",
 		"signalErrorBasedOn:" : "mu 11/29/2011 22:59",
 		"convertToNative:using:" : "MasashiUmezawa 5/18/2016 13:39",
-		"httpJsonGet:" : "MasashiUmezawa 1/14/2016 17:10",
-		"httpSetAuthenticationInfo" : "MasashiUmezawa 7/5/2015 22:30",
-		"httpClient:" : "MasashiUmezawa 6/2/2012 22:54",
 		"utf8StringFrom:" : "MasashiUmezawa 4/22/2012 14:35",
-		"release" : "MasashiUmezawa 6/2/2012 22:53",
+		"httpJsonGet:on:" : "MasashiUmezawa 7/7/2020 17:10",
 		"readJsonFromResponse:" : "MasashiUmezawa 4/22/2012 14:39",
-		"releaseHttpClient" : "MasashiUmezawa 6/2/2012 22:59",
-		"httpJsonPut:content:" : "MasashiUmezawa 1/14/2016 17:11",
-		"jsonStringFrom:" : "MasashiUmezawa 9/5/2017 16:19"
+		"jsonStringFrom:" : "MasashiUmezawa 9/5/2017 16:19",
+		"string:beginsWith:" : "mu 11/27/2011 23:58"
 	},
 	"class" : {
 		"initialize" : "mu 11/27/2011 16:17"
