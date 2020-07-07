@@ -1,3 +1,3 @@
 accessing
 settings
-	^N4Settings default
+	^ settings ifNil: [settings := N4Settings default]

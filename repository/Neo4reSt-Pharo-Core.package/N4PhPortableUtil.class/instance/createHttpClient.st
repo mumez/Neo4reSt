@@ -1,3 +1,6 @@
-factories
+actions-http-helper
 createHttpClient
-	^ZnClient new
+	| cli |
+	cli := ZnClient new.
+	self settings keepConnection ifFalse: [ cli beOneShot ].
+	^cli
