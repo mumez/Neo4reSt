@@ -1,4 +1,4 @@
-actions
+actions-deprecated
 relationshipAt: anId
 	| aJsonObject |
 	aJsonObject := self restClient getRelationshipAt: anId.

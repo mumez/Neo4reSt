@@ -1,4 +1,4 @@
-actions
+actions-deprecated
 nodeAt: nodeId 
 	| resp |
 	resp := self restClient getNodeAt: nodeId.

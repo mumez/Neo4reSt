@@ -1,4 +1,4 @@
-actions
+actions-deprecated
 createNodeLabeled: label
 	| node |
 	node := self createNode.
