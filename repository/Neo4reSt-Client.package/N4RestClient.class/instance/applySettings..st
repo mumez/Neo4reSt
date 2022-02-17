@@ -1,3 +1,4 @@
 initialization
 applySettings: aNgSettings
-	self rootUri: aNgSettings rootUri 
+	self settings: aNgSettings.
+	self rawClient settings: aNgSettings.
