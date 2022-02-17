@@ -1,4 +1,4 @@
-actions
+deprecated-rest
 getRelationshipsAt: nodeId direction: direction types: typeCollection
 	| uriStream |
 	uriStream := WriteStream with: (self nodeUri // nodeId) asString.

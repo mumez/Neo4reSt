@@ -1,4 +1,4 @@
-actions-deprecated
+deprecated-cypher
 queryByLegacyCypher: queryString params: dictionary
 	| json jsonString |
 	json := self newQueryJson: queryString params: dictionary.

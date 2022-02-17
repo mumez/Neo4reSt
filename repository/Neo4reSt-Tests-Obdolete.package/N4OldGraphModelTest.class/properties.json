@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "mu 2/20/2012 00:33",
 	"super" : "TestCase",
-	"category" : "Neo4reSt-Tests",
+	"category" : "Neo4reSt-Tests-Obdolete",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -9,6 +9,6 @@
 		"db",
 		"initialNodeForTest"
 	],
-	"name" : "N4GraphModelTest",
+	"name" : "N4OldGraphModelTest",
 	"type" : "normal"
 }

@@ -4,4 +4,4 @@ queryByCyphersUsing: queryBuildingBlock
 	statements := queryBuildingBlock value: OrderedCollection new value: self.
 	json := self newTransactionStatementsJson: statements asArray.
 	jsonString := self portableUtil jsonStringFrom: json.
-	^ self portableUtil httpJsonPost: (self rootUri, 'transaction', 'commit') content: jsonString
+	^ self portableUtil httpJsonPost: self transactionUri content: jsonString

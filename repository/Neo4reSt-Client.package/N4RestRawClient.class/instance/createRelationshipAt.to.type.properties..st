@@ -1,4 +1,4 @@
-actions
+deprecated-rest
 createRelationshipAt: nodeId to: uri type: type properties: assocs
 	|json jsonString |
 	json := self newRelationshipJson: uri type: type asString properties: assocs.

@@ -5,4 +5,4 @@ queryByCypher: queryString params: dictionary resultDataContents: resultDataCont
 	statementDict := self newTransactionStatementJson: queryString params: dictionary resultDataContents: resultDataContents includeStats: aBoolean.
 	json := self newTransactionStatementsJson: {statementDict}.
 	jsonString := self portableUtil jsonStringFrom: json.
-	^ self portableUtil httpJsonPost: (self rootUri, 'transaction', 'commit') content: jsonString
+	^ self portableUtil httpJsonPost: self transactionUri content: jsonString

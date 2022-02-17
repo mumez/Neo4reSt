@@ -1,4 +1,4 @@
-actions
+deprecated-rest
 traverseFrom: nodeId using: traversalDescription
 	| jsonString urlString |
 	urlString := self nodeUri // nodeId / 'traverse' // traversalDescription returnType.

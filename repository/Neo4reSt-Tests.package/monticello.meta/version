@@ -1,2 +1,0 @@
-(name 'Neo4reSt-Tests-MasashiUmezawa.1587475825' message 'Added basic cypher tests' id '90e060cc-3766-0d00-87c3-5f0609d5f299' date '7 July 2020' time '5:48:55.373968 pm' author 'MasashiUmezawa' ancestors ((name 'Neo4reSt-Tests-CompatibleUserName.1587475824' message 'Fixed NeoJSON package name
-' id '9b145cf0-969c-5a3b-b480-adb133827d91' date '21 April 2020' time '10:30:24 pm' author 'CompatibleUserName' ancestors () stepChildren ())) stepChildren ())

@@ -1,4 +1,4 @@
-builder
+deprecated-builder
 newQueryJson: queryString params: dictionary
 	| jsonAssocs |
 	jsonAssocs := OrderedCollection new.
