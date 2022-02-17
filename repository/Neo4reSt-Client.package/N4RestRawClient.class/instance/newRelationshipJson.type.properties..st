@@ -1,4 +1,4 @@
-builder
+deprecated-builder
 newRelationshipJson: uriOrNodeId type: type properties: assocs
 	| uri jsonAssocs |
 	jsonAssocs := OrderedCollection new: 3.

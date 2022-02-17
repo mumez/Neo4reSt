@@ -1,4 +1,4 @@
-actions-indexes
+deprecated-indexes
 addRelationshipIndex: indexName on: relationshipUri key: key value: value
 	|json jsonString |
 	json := self newRelationshipIndexJson: relationshipUri key: key value: value.

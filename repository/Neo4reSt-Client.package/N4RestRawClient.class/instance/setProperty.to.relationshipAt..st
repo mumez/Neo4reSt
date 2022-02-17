@@ -1,4 +1,4 @@
-actions
+deprecated-rest
 setProperty: propName to: value relationshipAt: relId 
 	| jsonString urlString |
 	urlString := self relationshipUri // relId / 'properties' // propName.

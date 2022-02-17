@@ -1,4 +1,4 @@
-builder
+deprecated-builder
 newRelationshipIndexJson: uriOrNodeId key: key value: value
 	| uri jsonAssocs |
 	jsonAssocs := OrderedCollection new: 3.

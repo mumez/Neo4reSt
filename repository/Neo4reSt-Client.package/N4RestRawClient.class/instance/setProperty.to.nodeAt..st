@@ -1,4 +1,4 @@
-actions
+deprecated-rest
 setProperty: propName to: value nodeAt: nodeId 
 	| jsonString urlString |
 	urlString := self nodeUri // nodeId / 'properties' // propName.

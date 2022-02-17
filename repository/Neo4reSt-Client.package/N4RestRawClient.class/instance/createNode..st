@@ -1,4 +1,4 @@
-actions
+deprecated-rest
 createNode: properties
 	| jsonString |
 	jsonString := self portableUtil jsonStringFrom: properties.
