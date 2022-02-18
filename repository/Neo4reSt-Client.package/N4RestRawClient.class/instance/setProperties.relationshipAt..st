@@ -1,4 +1,4 @@
-actions
+deprecated-rest
 setProperties: properties relationshipAt: relId
 	| jsonString urlString |
 	urlString := self relationshipUri // relId / 'properties'.

@@ -1,3 +1,3 @@
 accessing
 rootUri
-	^ self at: #rootUri ifAbsentPut: [self defaultRootUri]
+	^ self at: #rootUri ifAbsent: [self defaultRootUri]

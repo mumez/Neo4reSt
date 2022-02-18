@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "mu 4/22/2012 14:57",
+	"super" : "TestCase",
+	"category" : "Neo4reSt-Tests-Obdolete",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "N4OldBasicHttpTest",
+	"type" : "normal"
+}

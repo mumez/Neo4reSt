@@ -1,4 +1,4 @@
-actions-labels
+deprecated-labels
 addLabel: label nodeAt: nodeId
 	| jsonString urlString |
 	urlString := self nodeUri // nodeId / 'labels'.

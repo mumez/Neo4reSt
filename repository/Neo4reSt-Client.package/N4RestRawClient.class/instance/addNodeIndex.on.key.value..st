@@ -1,4 +1,4 @@
-actions-indexes
+deprecated-indexes
 addNodeIndex: indexName on: nodeUri key: key value: value
 	|json jsonString |
 	json := self newNodeIndexJson: nodeUri key: key value: value.

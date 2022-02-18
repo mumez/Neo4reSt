@@ -1,4 +1,4 @@
-actions
+deprecated-rest
 setProperties: properties nodeAt: nodeId
 	| jsonString urlString |
 	urlString := self nodeUri // nodeId / 'properties'.

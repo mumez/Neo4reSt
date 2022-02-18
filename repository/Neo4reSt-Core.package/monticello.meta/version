@@ -1,2 +1,0 @@
-(name 'Neo4reSt-Core-MasashiUmezawa.1587475825' message 'Added new http-helper portable API' id 'd87d66c3-3766-0d00-87c1-462609d5f299' date '7 July 2020' time '5:46:24.746968 pm' author 'MasashiUmezawa' ancestors ((name 'Neo4reSt-Core-CompatibleUserName.1587475824' message 'Fixed NeoJSON package name
-' id '261dc83a-1558-5c87-b203-87405d3d38e7' date '21 April 2020' time '10:30:24 pm' author 'CompatibleUserName' ancestors () stepChildren ())) stepChildren ())

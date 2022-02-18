@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"rawClient"
+		"rawClient",
+		"settings"
 	],
 	"name" : "N4RestClient",
 	"type" : "normal"
