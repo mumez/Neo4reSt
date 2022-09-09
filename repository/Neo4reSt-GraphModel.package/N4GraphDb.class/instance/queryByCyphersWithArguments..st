@@ -1,3 +1,3 @@
 actions-cypher
 queryByCyphersWithArguments: queryStringsWithArguments
-	^self restClient queryByCyphersWithParams: queryStringsWithArguments
+	^self httpClient queryByCyphersWithParams: queryStringsWithArguments

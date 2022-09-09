@@ -1,3 +1,3 @@
 properties
 properties
-	^ self restClient getPropertiesNodeAt: self id 
+	^ self httpClient getPropertiesNodeAt: self id 

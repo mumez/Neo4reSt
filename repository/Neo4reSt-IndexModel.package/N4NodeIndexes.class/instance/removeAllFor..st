@@ -1,3 +1,3 @@
 actions
 removeAllFor: graphObject
-	^self restClient removeNodeIndexes: self name on: graphObject id
+	^self httpClient removeNodeIndexes: self name on: graphObject id

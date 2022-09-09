@@ -1,3 +1,3 @@
 properties
 propertyAt: propName put: value
-	^ self restClient setProperty: propName to: value nodeAt: self id 
+	^ self httpClient setProperty: propName to: value nodeAt: self id 

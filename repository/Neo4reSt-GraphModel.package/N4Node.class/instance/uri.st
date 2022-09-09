@@ -1,3 +1,3 @@
 accessing
 uri
-	^ self restClient rootUri, 'node', self id asString
+	^ self httpClient rootUri, 'node', self id asString

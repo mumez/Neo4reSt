@@ -1,3 +1,3 @@
 properties
 removePropertyAt: propName
-	^ self restClient deleteProperty: propName relationshipAt: self id 
+	^ self httpClient deleteProperty: propName relationshipAt: self id 

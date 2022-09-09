@@ -1,3 +1,3 @@
 actions-labels
 addLabel: label
-	^self restClient addLabel: label nodeAt: self id
+	^self httpClient addLabel: label nodeAt: self id

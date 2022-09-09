@@ -1,3 +1,3 @@
 actions
 delete
-	^ self restClient deleteNodeAt: self id 
+	^ self httpClient deleteNodeAt: self id 

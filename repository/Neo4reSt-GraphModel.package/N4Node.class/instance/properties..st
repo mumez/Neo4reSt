@@ -1,3 +1,3 @@
 properties
 properties: propAssocs
-	^ self restClient setProperties: propAssocs nodeAt: self id
+	^ self httpClient setProperties: propAssocs nodeAt: self id

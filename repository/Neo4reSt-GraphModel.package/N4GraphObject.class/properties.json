@@ -7,9 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"db",
-		"restClient",
 		"id",
-		"settings"
+		"settings",
+		"httpClient"
 	],
 	"name" : "N4GraphObject",
 	"type" : "normal"

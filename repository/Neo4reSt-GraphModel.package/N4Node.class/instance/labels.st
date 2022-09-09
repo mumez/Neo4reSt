@@ -1,3 +1,3 @@
 accessing
 labels
-	^ self restClient getNodeLabelsAt: self id asString
+	^ self httpClient getNodeLabelsAt: self id asString

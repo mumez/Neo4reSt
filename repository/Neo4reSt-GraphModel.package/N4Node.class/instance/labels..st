@@ -1,3 +1,3 @@
 accessing
 labels: labels
-	^ self restClient setLabels: labels nodeAt: self id asString
+	^ self httpClient setLabels: labels nodeAt: self id asString

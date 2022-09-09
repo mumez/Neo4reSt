@@ -1,3 +1,3 @@
 actions
 delete
-	^ self restClient deleteRelationshipIndexes: self name
+	^ self httpClient deleteRelationshipIndexes: self name

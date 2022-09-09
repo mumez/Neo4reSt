@@ -1,3 +1,3 @@
 accessing
 uri
-	^ self restClient rootUri, 'relationship/', self id asString
+	^ self httpClient rootUri, 'relationship/', self id asString
