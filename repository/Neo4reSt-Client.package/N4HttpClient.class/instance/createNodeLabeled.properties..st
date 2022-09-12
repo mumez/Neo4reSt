@@ -8,4 +8,4 @@ createNodeLabeled: labelOrLabels properties: props
 		CyCreate of: node.
 		CyReturn of: n.
 	}.
-	^self runCypherResultWrapped: query
+	^self graphCypher: query
