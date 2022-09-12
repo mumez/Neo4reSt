@@ -1,4 +1,4 @@
 accessing
 stats
 
-	^ stats
+	^ stats ifNil: [ stats := Dictionary new ]

@@ -5,4 +5,4 @@ deleteNodesLabeled: labelOrLabels where: whereClauseBuilder
 	node := 'n' asCypherIdentifier.
 	query := CyQuery match: (CyNode name: node labels: labels)
 		 where: (whereClauseBuilder value: node) delete: node.
-	^self statsCypher: query
+	^(self statsCypher: query) result nodesDeleted > 0
