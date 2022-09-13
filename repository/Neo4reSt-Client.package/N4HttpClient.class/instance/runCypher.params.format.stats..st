@@ -6,5 +6,5 @@ runCypher: cypherQuery params: params format: graphOrRow stats: aBoolean
 	graphOrRow == #graph ifTrue: [ resultDataContents := #(graph) ].
 	
 	resp := self queryByCypher: cypherQuery cypherString params: params resultDataContents: resultDataContents includeStats: aBoolean.
-	resp hasErrors ifTrue: [ (N4CypherError response: resp) signal].
+	resp signalIfError.
 	^resp
