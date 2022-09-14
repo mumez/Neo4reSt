@@ -1,8 +1,8 @@
 actions-nodes
-deleteNodesLabeled: labelOrLabels where: whereClauseBuilder
+nodesLabeled: labelOrLabels where: whereClauseBuilder
 	| labels node query |
 	labels := labelOrLabels isArray ifTrue: [ labelOrLabels ] ifFalse: [ Array with: labelOrLabels ].
 	node := 'n' asCypherIdentifier.
 	query := CyQuery match: (CyNode name: node labels: labels)
-		 where: (whereClauseBuilder value: node) delete: node.
-	^(self statsCypher: query) resultDo: [:r | r nodesDeleted > 0]
+		 where: (whereClauseBuilder value: node) return: node.
+	^(self graphCypher: query) resultDo: [ :r | r firstGraphDo: [ :g | g nodes] ifNone: [ #() ] ]
