@@ -1,10 +1,10 @@
 actions-relationships
-createInRelationshipTyped: typeOrTypes fromNodeId: startNodeId toNodeId: endNodeId properties: propertiesArray
+mergeInRelationshipTyped: typeOrTypes fromNodeId: startNodeId toNodeId: endNodeId properties: propertiesArray
 	| query |
 	query := CyQuery
 		matchPathWithNodeAt: startNodeId
 		nodeAt: endNodeId
-		createIn: [ :startNode :endNode :relIdentifier | 
+		mergeIn: [ :startNode :endNode :relIdentifier | 
 			| rel |
 			rel := relIdentifier rel: typeOrTypes props: propertiesArray.
 			startNode <- rel - endNode ].

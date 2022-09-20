@@ -8,4 +8,4 @@ createOutRelationshipTyped: typeOrTypes fromNodeId: startNodeId toNodeId: endNod
 			| rel |
 			rel := relIdentifier rel: typeOrTypes props: propertiesArray.
 			startNode - rel -> endNode ].
-	^(self graphCypher: query) resultDo: [ :r | r firstGraphDo: [ :g | g relationship beOut] ]
+	^(self graphCypher: query) resultDo: [ :result | result firstGraphDo: [ :g | g relationship beOut] ]

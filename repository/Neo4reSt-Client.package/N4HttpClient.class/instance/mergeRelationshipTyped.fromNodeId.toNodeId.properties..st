@@ -1,11 +1,11 @@
 actions-relationships
-createInRelationshipTyped: typeOrTypes fromNodeId: startNodeId toNodeId: endNodeId properties: propertiesArray
+mergeRelationshipTyped: typeOrTypes fromNodeId: startNodeId toNodeId: endNodeId properties: propertiesArray
 	| query |
 	query := CyQuery
 		matchPathWithNodeAt: startNodeId
 		nodeAt: endNodeId
-		createIn: [ :startNode :endNode :relIdentifier | 
+		mergeIn: [ :startNode :endNode :relIdentifier | 
 			| rel |
 			rel := relIdentifier rel: typeOrTypes props: propertiesArray.
-			startNode <- rel - endNode ].
+			startNode - rel - endNode ].
 	^(self graphCypher: query) resultDo: [ :result | result firstGraphDo: [ :g | g relationship beIn] ]
