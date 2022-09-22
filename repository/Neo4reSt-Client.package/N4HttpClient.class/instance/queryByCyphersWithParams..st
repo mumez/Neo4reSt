@@ -1,4 +1,4 @@
-actions-multiple-query
+actions-multiple-cypher
 queryByCyphersWithParams: queryWithParams
 	^self queryByCyphersUsing: [:statements :builder |
 		queryWithParams do: [ :queryParamPair | 

@@ -1,4 +1,4 @@
-actions-multiple-query
+actions-multiple-cypher
 queryByCyphersUsing: queryBuildingBlock
 	| resp |
 	resp := self rawClient queryByCyphersUsing: queryBuildingBlock.

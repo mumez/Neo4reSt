@@ -1,4 +1,4 @@
-actions-query
+actions-basic-cypher
 queryByCypher: queryString params: dictionary resultDataContents: resultDataContents includeStats: aBoolean
 	| resp |
 	resp := self rawClient queryByCypher: queryString params: dictionary resultDataContents: resultDataContents includeStats: aBoolean.

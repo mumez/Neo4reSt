@@ -1,3 +1,3 @@
-actions-multiple-query
+actions-multiple-cypher
 queryByCyphers: queryStrings
 	^ self queryByCyphersWithParams: queryStrings
