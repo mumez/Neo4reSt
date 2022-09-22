@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "N4GraphObject",
+	"super" : "N4Object",
 	"category" : "Neo4reSt-GraphModel",
 	"classinstvars" : [ ],
 	"pools" : [ ],
