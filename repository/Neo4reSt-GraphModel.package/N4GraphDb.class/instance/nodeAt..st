@@ -5,4 +5,4 @@ nodeAt: systemId
 	node := CyNode name: n. 
 	query := CyQuery match: node where: (n getId equals: systemId)
 		return: node.
-	^(self graphCypher: query) resultDo: [ :r | r firstGraphDo: [ :g | g node] ]
+	^self cypherReturnNode: query

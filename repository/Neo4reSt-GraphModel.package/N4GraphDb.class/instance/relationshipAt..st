@@ -6,5 +6,4 @@ relationshipAt: systemId
 	r := 'r' asCypherIdentifier.
 	rel := CyRelationship start: s end: e name: r. 
 	query := CyQuery match: rel where: (r getId equals: systemId) return: r.
-	^(self graphCypher: query) resultDo: [ :result | 
-		result firstGraphDo: [ :g | g relationship] ]
+	^self cypherReturnRelationship: query

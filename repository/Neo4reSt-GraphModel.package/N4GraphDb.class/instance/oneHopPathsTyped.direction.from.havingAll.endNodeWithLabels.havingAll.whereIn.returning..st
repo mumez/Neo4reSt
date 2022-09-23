@@ -12,4 +12,4 @@ oneHopPathsTyped: typeOrTypes direction: direction from: startNodeId havingAll: 
 		endNodeIn: [ :e | e node: labels props: endNodeProps ]
 		pathIn: pathBlock
 		whereIn: whereClauseBuilder.
-	^(self graphCypher: query) resultDo: [ :r | r firstGraphDo: [ :g | g ] ]
+	^(self httpClient graphCypher: query) resultDo: [ :r | r firstGraphDo: [ :g | g ] ]

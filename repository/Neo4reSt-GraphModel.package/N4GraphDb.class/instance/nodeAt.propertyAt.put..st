@@ -5,5 +5,4 @@ nodeAt: systemId propertyAt: key put: value
 	node := CyNode name: n. 
 	query := CyQuery match: node where: (n getId equals: systemId)
 		set: {(n @ key) to: value}.
-	^(self statsCypher: query)
-		resultDo: [:r | r containsUpdates ]
+	^self cypherStatusOfContainUpdates: query params: #()

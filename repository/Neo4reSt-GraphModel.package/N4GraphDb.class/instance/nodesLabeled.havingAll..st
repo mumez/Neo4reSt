@@ -1,6 +1,3 @@
-global operations
-nodesLabeled: label havingAll: assocArray
-	| predicates resp |
-	predicates := self andPredicatesForNodeFrom: assocArray.
-	resp := self queryByCypher: ('MATCH (n:{1}) where {2} RETURN id(n)' format: {label. predicates}).
-	^self nodesFromCypherResponse: resp
+actions-nodes
+nodesLabeled: labelOrLabels havingAll: assocArray
+	^self nodesLabeled: labelOrLabels where: [:node | node havingAll: assocArray]

@@ -1,4 +1,4 @@
-private-cypher
+actions-cypher
 runCypher: cypherQuery params: params format: graphOrRow stats: aBoolean
 	| resultDataContents resp |
 	resultDataContents := nil.

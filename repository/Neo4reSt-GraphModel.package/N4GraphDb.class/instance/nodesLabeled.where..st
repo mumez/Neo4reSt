@@ -5,4 +5,4 @@ nodesLabeled: labelOrLabels where: whereClauseBuilder
 	node := 'n' asCypherIdentifier.
 	query := CyQuery match: (CyNode name: node labels: labels)
 		 where: (whereClauseBuilder value: node) return: node.
-	^(self graphCypher: query) resultDo: [ :r | r firstGraphDo: [ :g | g nodes] ifNone: [ #() ] ]
+	^(self httpClient graphCypher: query) resultDo: [ :r | r firstGraphDo: [ :g | g nodes] ifNone: [ #() ] ]

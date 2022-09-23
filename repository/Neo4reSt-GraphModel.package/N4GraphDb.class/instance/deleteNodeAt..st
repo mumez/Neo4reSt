@@ -5,4 +5,4 @@ deleteNodeAt: systemId
 	node := CyNode name: n. 
 	query := CyQuery match: node where: (n getId equals: systemId)
 		delete: node.
-	^(self statsCypher: query) resultDo: [:r | r nodesDeleted > 0]
+	^self cypherStatusOfNodesDeleted: query
