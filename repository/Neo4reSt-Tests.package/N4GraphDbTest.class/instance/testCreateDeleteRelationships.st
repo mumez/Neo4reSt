@@ -13,8 +13,8 @@ testCreateDeleteRelationships
 		self assert: outRelCreated direction equals: #out.
 		self assert: (inRelRetrieved propertyAt: #a) equals: 1.
 		self assert: (outRelRetrieved propertyAt: #a) equals: 2.
-		deletedInRel := db deleteRelationshipAt: inRelRetrieved id.
-		deletedOutRel := db deleteRelationshipAt: outRelRetrieved id.
+		deletedInRel := inRelRetrieved delete.
+		deletedOutRel := outRelRetrieved delete.
 		self assert: deletedInRel equals: true.
 		self assert: deletedOutRel equals: true.
 		self assert: (db relationshipAt: inRelCreated id) equals: nil.

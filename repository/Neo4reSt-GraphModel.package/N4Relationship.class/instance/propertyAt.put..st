@@ -1,3 +1,3 @@
 properties
 propertyAt: propName put: value
-	^ self httpClient setProperty: propName to: value relationshipAt: self id 
+	^ self db relationshipAt: self id propertyAt: propName put: value

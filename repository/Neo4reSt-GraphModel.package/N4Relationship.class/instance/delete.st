@@ -1,3 +1,3 @@
 actions
 delete
-	^ self httpClient deleteRelationshipAt: self id 
+	^self db deleteRelationshipAt: self id 
