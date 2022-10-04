@@ -1,5 +1,3 @@
 accessing
 direction
-	"Answer the value of direction"
-
-	^ direction
+	^self rawGraphObject direction

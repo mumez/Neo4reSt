@@ -5,12 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"type",
-		"direction",
-		"startNodeId",
-		"endNodeId"
-	],
+	"instvars" : [ ],
 	"name" : "N4Relationship",
 	"type" : "normal"
 }
