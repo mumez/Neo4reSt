@@ -1,4 +1,4 @@
-accessing-relationships
+accessing-relationships-old
 inRelationships: type
 	| jsons |
 	jsons := self httpClient getInRelationshipsAt: self id type: type.

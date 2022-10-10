@@ -1,3 +1,3 @@
-accessing-relationships
+accessing-relationships-old
 incoming
 	^self inRelationships

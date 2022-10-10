@@ -1,4 +1,4 @@
-accessing-relationships
+accessing-relationships-old
 allRelationships
 	| jsons |
 	jsons := self httpClient getAllRelationshipsAt: self id.
