@@ -14,6 +14,8 @@ testPropertiesOfNode
 		self assert: (nodeRetrieved propertyAt: #a) equals: 0.
 		self assert: (nodeRetrieved propertyAt: #b) equals: nil.
 		self assert: (nodeRetrieved propertyAt: #c) equals: nil.
+		nodeRetrieved removePropertyAt: #a.
+		self assert: (nodeRetrieved propertyAt: #a) equals: nil.
 		deletedResult := nodeRetrieved delete.
 		self assert: deletedResult equals: true.
 		deletedNodeRetrieved := db nodeAt: nodeCreated id.

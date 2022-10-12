@@ -16,6 +16,8 @@ testPropertiesOfRelationship
 		self assert: (inRelRetrieved propertyAt: #a) equals: 0.
 		self assert: (inRelRetrieved propertyAt: #b) equals: nil.
 		self assert: (inRelRetrieved propertyAt: #c) equals: nil.
+		inRelRetrieved removePropertyAt: #a.
+		self assert: (inRelRetrieved propertyAt: #a) equals: nil.
 		deletedResult := inRelRetrieved delete.
 		self assert: deletedResult equals: true.
 		deletedRelRetrieved := db relationshipAt: inRelRetrieved id.
