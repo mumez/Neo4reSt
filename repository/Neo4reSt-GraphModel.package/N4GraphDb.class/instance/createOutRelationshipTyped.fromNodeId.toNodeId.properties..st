@@ -1,11 +1,11 @@
 actions-relationships
-createOutRelationshipTyped: typeOrTypes fromNodeId: startNodeId toNodeId: endNodeId properties: propertiesArray
+createOutRelationshipTyped: type fromNodeId: startNodeId toNodeId: endNodeId properties: propertiesArray
 	| query |
 	query := CyQuery
 		matchPathWithNodeAt: startNodeId
 		nodeAt: endNodeId
 		createIn: [ :startNode :endNode :relIdentifier | 
 			| rel |
-			rel := relIdentifier rel: typeOrTypes props: propertiesArray.
+			rel := relIdentifier rel: type props: propertiesArray.
 			startNode - rel -> endNode ].
 	^self cypherReturnOutRelationship: query

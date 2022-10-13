@@ -1,5 +1,5 @@
 relationships
-relateTo: otherNode typed: types properties: propertiesArray
+relateTo: otherNode typed: type properties: propertiesArray
 	| newRelationship |
-	newRelationship := self db createOutRelationshipTyped: types fromNodeId: self id toNodeId: otherNode id properties: propertiesArray.
+	newRelationship := self db createOutRelationshipTyped: type fromNodeId: self id toNodeId: otherNode id properties: propertiesArray.
 	^ newRelationship

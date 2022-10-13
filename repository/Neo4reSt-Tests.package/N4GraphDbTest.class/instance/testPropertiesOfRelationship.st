@@ -22,4 +22,6 @@ testPropertiesOfRelationship
 		self assert: deletedResult equals: true.
 		deletedRelRetrieved := db relationshipAt: inRelRetrieved id.
 		self assert: deletedRelRetrieved equals: nil.
+		self assert: (db deleteNodeAt: nodeCreated1 id) equals: true.
+		self assert: (db deleteNodeAt: nodeCreated2 id) equals: true.
 	]

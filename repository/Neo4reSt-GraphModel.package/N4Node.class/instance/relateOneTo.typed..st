@@ -1,3 +1,3 @@
 relationships
 relateOneTo: otherNode typed: typeName
-	^self relateOneTo: otherNode typed: {typeName} properties: #()
+	^self relateOneTo: otherNode typed: typeName properties: #()
