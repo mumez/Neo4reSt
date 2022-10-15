@@ -1,31 +1,31 @@
 testing
 testCreateAccessRelationshipsFromNodes
-	self dbDo: [ :db | | nodeCreated1 nodeCreated2 inRelCreated1 inRelCreated2 inRelCreated3 inRelCreated4 inRelCreated5 inRelsRetrieved1 inRelRetrieved1 inRelsRetrieved2 inRelRetrieved2 inRelsRetrieved3 |
+	self dbDo: [ :db | | nodeCreated1 nodeCreated2 outRelCreated1 outRelCreated2 outRelCreated3 outRelCreated4 outRelCreated5 outRelsRetrieved1 outRelRetrieved1 outRelsRetrieved2 outRelRetrieved2 outRelsRetrieved3 |
 		nodeCreated1 := db createNodeLabeled: 'test'.
 		nodeCreated2 := db createNodeLabeled: 'test'.
-		inRelCreated1 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL1 properties: {#a->1}.
-		inRelCreated2 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL2 properties: {}.
-		inRelCreated3 := nodeCreated1 relateTo: nodeCreated2 typed: #REL3 properties: {}.
-		inRelCreated4 := nodeCreated1 relateTo: nodeCreated2 typed: #REL3 properties: {}.
-		inRelCreated5 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL1 properties: {#b->2}.
+		outRelCreated1 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL1 properties: {#a->1}.
+		outRelCreated2 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL2 properties: {}.
+		outRelCreated3 := nodeCreated1 relateTo: nodeCreated2 typed: #REL3 properties: {}.
+		outRelCreated4 := nodeCreated1 relateTo: nodeCreated2 typed: #REL3 properties: {}.
+		outRelCreated5 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL1 properties: {#b->2}.
 		
-		inRelsRetrieved1 := nodeCreated1 outRelationshipsTyped: #REL1.
-		self assert: (inRelsRetrieved1 size) equals: 1.
-		inRelRetrieved1 := inRelsRetrieved1 first.
-		self assert: inRelRetrieved1 properties asDictionary associations equals: {#b->2} asDictionary associations.
+		outRelsRetrieved1 := nodeCreated1 outRelationshipsTyped: #REL1.
+		self assert: (outRelsRetrieved1 size) equals: 1.
+		outRelRetrieved1 := outRelsRetrieved1 first.
+		self assert: outRelRetrieved1 properties asDictionary associations equals: {#b->2} asDictionary associations.
 		
-		inRelsRetrieved2 := nodeCreated1 outRelationshipsTyped: #REL2.
-		self assert: (inRelsRetrieved2 size) equals: 1.
-		inRelRetrieved2 := inRelsRetrieved2 first.
+		outRelsRetrieved2 := nodeCreated1 outRelationshipsTyped: #REL2.
+		self assert: (outRelsRetrieved2 size) equals: 1.
+		outRelRetrieved2 := outRelsRetrieved2 first.
 		
-		inRelsRetrieved3 := nodeCreated1 outRelationshipsTyped: #REL3.
-		self assert: (inRelsRetrieved3 size) equals: 2.
+		outRelsRetrieved3 := nodeCreated1 outRelationshipsTyped: #REL3.
+		self assert: (outRelsRetrieved3 size) equals: 2.
 		
 		self assert: (nodeCreated1 outRelationships size) equals: 4.
 		
-		self assert: inRelRetrieved1 delete equals: true.
-		self assert: inRelRetrieved2 delete equals: true.
-		inRelsRetrieved3 do: [ :each | 
+		self assert: outRelRetrieved1 delete equals: true.
+		self assert: outRelRetrieved2 delete equals: true.
+		outRelsRetrieved3 do: [ :each | 
 			self assert: each delete equals: true.
 		].
 		self assert: nodeCreated1 delete equals: true.
