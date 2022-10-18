@@ -1,3 +1,3 @@
 accessing-relationships-old
 existsRelationship: type
-	^(self allRelationships: type) notEmpty
+	^(self relationshipsTyped: type) notEmpty

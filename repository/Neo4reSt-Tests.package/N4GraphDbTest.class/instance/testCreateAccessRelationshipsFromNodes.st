@@ -7,12 +7,12 @@ testCreateAccessRelationshipsFromNodes
 		outRelCreated2 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL2 properties: {}.
 		outRelCreated3 := nodeCreated1 relateTo: nodeCreated2 typed: #REL3 properties: {}.
 		outRelCreated4 := nodeCreated1 relateTo: nodeCreated2 typed: #REL3 properties: {}.
-		outRelCreated5 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL1 properties: {#b->2}.
+		outRelCreated5 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL1 properties: {#a->1}.
 		
 		outRelsRetrieved1 := nodeCreated1 outRelationshipsTyped: #REL1.
 		self assert: (outRelsRetrieved1 size) equals: 1.
 		outRelRetrieved1 := outRelsRetrieved1 first.
-		self assert: outRelRetrieved1 properties asDictionary associations equals: {#b->2} asDictionary associations.
+		self assert: outRelRetrieved1 properties asDictionary associations equals: {#a->1} asDictionary associations.
 		
 		outRelsRetrieved2 := nodeCreated1 outRelationshipsTyped: #REL2.
 		self assert: (outRelsRetrieved2 size) equals: 1.
@@ -29,5 +29,5 @@ testCreateAccessRelationshipsFromNodes
 			self assert: each delete equals: true.
 		].
 		self assert: nodeCreated1 delete equals: true.
-		self assert: nodeCreated1 delete equals: true.
+		self assert: nodeCreated2 delete equals: true.
 	]
