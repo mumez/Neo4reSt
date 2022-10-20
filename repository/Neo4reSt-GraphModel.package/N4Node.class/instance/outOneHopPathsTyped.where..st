@@ -7,4 +7,4 @@ outOneHopPathsTyped: typeOrTypes where: where
 		havingAll: {}
 		endNodeWithLabels: {}
 		havingAll: {}
-		whereIn: where returning: [ :path | path ]
+		whereIn: where

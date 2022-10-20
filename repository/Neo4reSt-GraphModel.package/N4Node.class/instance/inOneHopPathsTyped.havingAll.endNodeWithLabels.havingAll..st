@@ -7,4 +7,4 @@ inOneHopPathsTyped: typeOrTypes havingAll: relProps endNodeWithLabels: labels ha
 		havingAll: relProps
 		endNodeWithLabels: labels
 		havingAll: endNodeProps
-		whereIn: [:start :rel :end |] returning: [ :path | path ].
+		whereIn: [:start :rel :end |]

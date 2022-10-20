@@ -1,5 +1,5 @@
 actions-paths
-oneHopPathsTyped: typeOrTypes direction: direction from: startNodeId havingAll: relProps endNodeWithLabels: labels havingAll: endNodeProps whereIn: whereClauseBuilder returning: returner
+existsOneHopPathsTyped: typeOrTypes direction: direction from: startNodeId havingAll: relProps endNodeWithLabels: labels havingAll: endNodeProps whereIn: whereClauseBuilder
 	| pathBlock query |
 	pathBlock := [ :startNode :rel :endNode | startNode - rel - endNode ].
 	direction == #in ifTrue: [ pathBlock := [ :startNode :rel :endNode | startNode <- rel - endNode ]].
@@ -11,5 +11,9 @@ oneHopPathsTyped: typeOrTypes direction: direction from: startNodeId havingAll: 
 		fromNodeAt: startNodeId
 		endNodeIn: [ :e | e node: labels props: endNodeProps ]
 		pathIn: pathBlock
-		whereIn: whereClauseBuilder.
-	^(self httpClient graphCypher: query) resultDo: [ :result | returner value: result ]
+		whereIn: whereClauseBuilder
+		pathProcessIn: [:path | path count > 0 ]
+		returnIn: [:r | r ].
+		query inspect.
+	^(self httpClient runCypher: query) 
+		resultDo: [ :result | result firstRowDo: [ :row | row first ] ]
