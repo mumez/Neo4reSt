@@ -14,6 +14,5 @@ existsOneHopPathsTyped: typeOrTypes direction: direction from: startNodeId havin
 		whereIn: whereClauseBuilder
 		pathProcessIn: [:path | path count > 0 ]
 		returnIn: [:r | r ].
-		query inspect.
 	^(self httpClient runCypher: query) 
 		resultDo: [ :result | result firstRowDo: [ :row | row first ] ]

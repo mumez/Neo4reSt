@@ -1,7 +1,7 @@
 accessing-relationships-existence
-existsRelationshipOfTyped: typeOrTypes endNodeHaving: key value: value
+existsOutRelationshipTyped: typeOrTypes endNodeHaving: key value: value
 	^ self db
 		existsOneHopPathsTyped: typeOrTypes
-		direction: #none
+		direction: #out
 		from: self id
 		whereIn: [:start :rel :end | (end prop: key) = value]
