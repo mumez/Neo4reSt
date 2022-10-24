@@ -9,6 +9,8 @@ testExistsRelationshipsFromNodes
 		outRelCreated4 := nodeCreated1 relateTo: nodeCreated2 typed: #REL3 properties: {}.
 		outRelCreated5 := nodeCreated1 relateOneTo: nodeCreated2 typed: #REL1 properties: {#a->1}.
 		
+		nodeCreated2 properties: {#c->3}.
+		
 		self assert: (nodeCreated1 existsRelationshipTyped: #REL1).
 		self assert: (nodeCreated1 existsOutRelationshipTyped: #REL1).
 		self deny: (nodeCreated1 existsInRelationshipTyped: #REL1).
@@ -18,6 +20,8 @@ testExistsRelationshipsFromNodes
 		
 		self assert: (nodeCreated1 existsRelationshipTyped: #REL2).
 		self assert: (nodeCreated1 existsOutRelationshipTyped: #REL2).
+		self assert: (nodeCreated1 existsOutRelationshipTyped: #REL2 endNodeHaving: #c value: 3).
+		self deny: (nodeCreated1 existsOutRelationshipTyped: #REL2 endNodeHaving: #c value: 4).
 		self deny: (nodeCreated1 existsInRelationshipTyped: #REL2).
 		
 		self assert: (nodeCreated1 existsRelationshipTyped: #REL3).
@@ -36,6 +40,8 @@ testExistsRelationshipsFromNodes
 		self deny: (nodeCreated1 existsRelationshipTyped: #REL1).
 		self deny: (nodeCreated1 existsRelationshipTyped: #REL2).
 		self deny: (nodeCreated1 existsRelationshipTyped: #REL3).
+		
+		
 	
 		self assert: nodeCreated1 delete equals: true.
 		self assert: nodeCreated2 delete equals: true.
