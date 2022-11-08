@@ -1,5 +1,12 @@
 global operations
-countNodesLabeled: label
-	| resp |
-	resp := self queryByCypher: (('MATCH (n:{1}) RETURN count(n)') format: {label}).
+countNodesLabeled: labelOrLabels
+	| n node query resp |
+	n := 'n' asCypherIdentifier.
+	node := n asNode.
+	labelOrLabels ifNotNil: [ 
+		node labels: (labelOrLabels isString ifTrue: [{labelOrLabels}] ifFalse: [labelOrLabels]). 
+	].
+	query := CyQuery match: node.
+	query addReturn: n count.
+	resp := self httpClient runCypher: query.
 	^(resp result data first at: 'row') first
