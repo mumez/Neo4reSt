@@ -9,4 +9,4 @@ countNodesLabeled: labelOrLabels
 	query := CyQuery match: node.
 	query addReturn: n count.
 	resp := self httpClient runCypher: query.
-	^(resp result data first at: 'row') first
+	^ resp resultDo: [:result | result firstRowDo: [:row | row first]].
