@@ -1,4 +1,4 @@
-global operations
+actions-relationships
 removeRelationshipsOfType: type
 	| resp |
 	resp := self queryByCypher: ('MATCH ()-[r:{1}]-() DELETE r' format: {type}).
