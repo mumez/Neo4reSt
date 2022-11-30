@@ -7,6 +7,6 @@ relationshipsTyped: typeOrTypes where: whereClauseBuilder orderBy: orderByClause
 		 where: (whereClauseBuilder value: r) return: r orderBy: orderByClause skip: skip limit: limit.
 	relationships := OrderedCollection new.
 	(self httpClient graphCypher: query) resultDo: [ :result |
-		 result allGraphsDo: [:g | relationships add: g relationship beOut]
+		 result allGraphsDo: [:g | relationships add: (self relationshipClass on: g relationship beOut from: self)]
 	].
 	^ relationships

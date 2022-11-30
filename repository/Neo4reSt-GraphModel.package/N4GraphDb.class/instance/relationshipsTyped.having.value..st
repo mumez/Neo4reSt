@@ -8,6 +8,6 @@ relationshipsTyped: typeOrTypes having: key value: value
 		 where: ((r @ key) = propParam) return: r.
 	relationships := OrderedCollection new.
 	(self httpClient graphCypher: query params: {propParam -> value}) resultDo: [ :result |
-		 result allGraphsDo: [:g | relationships add: g relationship beOut]
+		 result allGraphsDo: [:g | relationships add: (self relationshipClass on: g relationship beOut from: self)]
 	].
 	^ relationships
