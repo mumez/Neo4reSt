@@ -1,10 +1,9 @@
 actions-nodes
 nodesLabeled: labelOrLabels having: key value: value
-	| propParam labels node query nodes |
+	| propParam node query nodes |
 	propParam := 'p' asCypherParameter.
-	labels := labelOrLabels isArray ifTrue: [ labelOrLabels ] ifFalse: [ Array with: labelOrLabels ].
 	node := 'n' asCypherIdentifier.
-	query := CyQuery match: (CyNode name: node labels: labels)
+	query := CyQuery match: (CyNode name: node labels: labelOrLabels)
 		 where: ((node @ key) = propParam) return: node.
 	nodes := OrderedCollection new.
 	(self httpClient graphCypher: query params: {propParam -> value}) resultDo: [ :r |

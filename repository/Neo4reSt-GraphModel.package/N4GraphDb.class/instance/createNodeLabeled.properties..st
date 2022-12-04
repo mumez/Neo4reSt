@@ -1,9 +1,8 @@
 actions-nodes
 createNodeLabeled: labelOrLabels properties: props
-	| labels n node query |
-	labels := labelOrLabels isArray ifTrue: [ labelOrLabels ] ifFalse: [ Array with: labelOrLabels ].
+	| n node query |
 	n := 'n' asCypherIdentifier.
-	node := CyNode name: n labels: labels props: props. 
+	node := CyNode name: n labels: labelOrLabels props: props. 
 	query := CyQuery statements: {
 		CyCreate of: node.
 		CyReturn of: n.

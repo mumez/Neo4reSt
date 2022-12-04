@@ -1,9 +1,8 @@
 actions-nodes
 nodesLabeled: labelOrLabels where: whereClauseBuilder orderBy: orderByClause skip: skip limit: limit
-	| labels node query nodes |
-	labels := labelOrLabels isArray ifTrue: [ labelOrLabels ] ifFalse: [ Array with: labelOrLabels ].
+	| node query nodes |
 	node := 'n' asCypherIdentifier.
-	query := CyQuery match: (CyNode name: node labels: labels)
+	query := CyQuery match: (CyNode name: node labels: labelOrLabels)
 		 where: (whereClauseBuilder value: node) return: node orderBy: orderByClause skip: skip limit: limit.
 	nodes := OrderedCollection new.
 	(self httpClient graphCypher: query) resultDo: [ :r |
