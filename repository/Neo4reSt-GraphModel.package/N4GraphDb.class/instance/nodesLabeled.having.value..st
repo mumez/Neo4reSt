@@ -7,6 +7,6 @@ nodesLabeled: labelOrLabels having: key value: value
 		 where: ((node @ key) = propParam) return: node.
 	nodes := OrderedCollection new.
 	(self httpClient graphCypher: query params: {propParam -> value}) resultDo: [ :r |
-		 r allGraphsDo: [:g | nodes add: g node]
+		 r allGraphsDo: [:g | nodes add: (self nodeClass on: g node from: self)]
 	].
 	^ nodes
