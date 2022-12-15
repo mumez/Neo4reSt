@@ -1,7 +1,6 @@
 testing
 testAllRelationshipTypes
-	| rel1 rel2 rel3 rel4 |
-	self dbDo: [ :db | | node1 node2 node3 node4 |
+	self dbDo: [ :db | | node1 node2 node3 node4 rel1 rel2 rel3 rel4 |
 		node1 := db createNodeLabeled: 'label1'.	
 		node2 := db createNodeLabeled: 'label1'.
 		node3 := db createNodeLabeled: 'label1'.

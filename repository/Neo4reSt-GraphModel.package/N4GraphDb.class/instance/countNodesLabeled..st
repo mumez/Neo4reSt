@@ -2,10 +2,7 @@ global operations
 countNodesLabeled: labelOrLabels
 	| n node query resp |
 	n := 'n' asCypherIdentifier.
-	node := n asNode.
-	labelOrLabels ifNotNil: [ 
-		node labels: (labelOrLabels isString ifTrue: [{labelOrLabels}] ifFalse: [labelOrLabels]). 
-	].
+	node := CyNode name: n labels: labelOrLabels.
 	query := CyQuery match: node.
 	query addReturn: n count.
 	resp := self httpClient runCypher: query.

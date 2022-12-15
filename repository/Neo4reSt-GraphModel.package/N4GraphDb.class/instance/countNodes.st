@@ -1,3 +1,3 @@
 global operations
 countNodes
-	^ self countNodesLabeled: nil
+	^ self countNodesLabeled: #()
