@@ -1,5 +1,6 @@
 actions-multiple-cypher
 queryByCyphersWithParams: queryWithParams
+	self logInfo: queryWithParams tag: #queryByCyphersWithParams:.
 	^self queryByCyphersUsing: [:statements :builder |
 		queryWithParams do: [ :queryParamPair | 
 			queryParamPair isString ifTrue: [  

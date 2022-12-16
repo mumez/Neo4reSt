@@ -1,3 +1,3 @@
 converting
-convertToNative: value using: settings
+convertToNative: value using: settingsDict
 	^value

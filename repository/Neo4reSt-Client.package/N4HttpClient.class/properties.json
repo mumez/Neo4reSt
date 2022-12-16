@@ -7,7 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"rawClient",
-		"settings"
+		"settings",
+		"logger"
 	],
 	"name" : "N4HttpClient",
 	"type" : "normal"

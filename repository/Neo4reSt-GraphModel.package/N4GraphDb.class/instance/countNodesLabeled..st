@@ -1,4 +1,4 @@
-global operations
+actions-nodes
 countNodesLabeled: labelOrLabels
 	| n node query resp |
 	n := 'n' asCypherIdentifier.

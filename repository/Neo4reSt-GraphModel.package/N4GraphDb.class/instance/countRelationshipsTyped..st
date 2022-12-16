@@ -1,4 +1,4 @@
-global operations
+actions-relationships
 countRelationshipsTyped: typeOrTypes
 	| r types rel query resp |
 	r := 'r' asCypherIdentifier.
