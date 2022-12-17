@@ -1,5 +1,5 @@
 actions-relationships
-deleteRelationshipsOfTyped: typeOrTypes havingAll: propertiesArray
+deleteRelationshipsTyped: typeOrTypes havingAll: propertiesArray
 	| r rel query |
 	r := 'r' asCypherIdentifier.
 	rel := r rel: typeOrTypes props: propertiesArray.

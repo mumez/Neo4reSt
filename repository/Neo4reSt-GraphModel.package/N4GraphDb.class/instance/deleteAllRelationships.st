@@ -1,3 +1,3 @@
 global operations
 deleteAllRelationships
-	^self deleteRelationshipsOfTyped: #() havingAll: #()
+	^self deleteRelationshipsTyped: #() havingAll: #()
