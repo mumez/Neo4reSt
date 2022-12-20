@@ -3,7 +3,7 @@ baseline: spec
 	<baseline>
 
 	spec for: #common do: [
-
+		self scypher: spec.
 		spec 
 			package: 'Neo4reSt-Core';
 			package: 'Neo4reSt-Client' with: [ spec requires: #('Neo4reSt-Core')];
@@ -15,8 +15,9 @@ baseline: spec
 			package: 'Neo4reSt-Tests' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')].
 		spec
 			group: 'default' with: #('Core' 'Tests');
-			group: 'Core' with: #('Neo4reSt-Core' 'Neo4reSt-Client' 'Neo4reSt-GraphModel' 'Neo4reSt-IndexModel' 'Neo4reSt-Traversal' 'Neo4reSt-Cypher');
+			group: 'Core' with: #('Neo4reSt-Core' 'Neo4reSt-Client' 'Neo4reSt-GraphModel'  'Neo4reSt-Cypher');
 			group: 'Demo' with: #('Neo4reSt-Demo-Dumper');
+			group: 'Obsolete' with: #('Neo4reSt-IndexModel' 'Neo4reSt-Traversal');
 			group: 'Tests' with: #('Neo4reSt-Tests')].
 		
 	spec for: #squeak do:[
