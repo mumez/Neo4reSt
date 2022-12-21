@@ -4,9 +4,9 @@ allLabels
 	n := 'n' asCypherIdentifier.
 	query := CyQuery match: (n asNode).
 	labels := 'labels' asCypherIdentifier.
-	query addStatement: (CyWith of: (n labels as: labels)) beDistinct.
+	(query addWith: (n labels as: labels)) beDistinct.
 	label := 'label' asCypherIdentifier.
-	query addStatement: (CyUnwind of: (labels deepCopy as: label)).
+	query addUnwind: (labels deepCopy as: label).
 	(query addReturn: label) beDistinct.
 
 	resp := self httpClient runCypher: query.
