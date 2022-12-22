@@ -55,14 +55,14 @@ matrix inRelationships.
 matrix outRelationships.
 
 (matrix inRelationshipsTyped: 'ACTED_IN')
-  collect: [:each | each endNode @ 'name']. 
+  collect: [:each | each tailNode @ 'name']. 
 ```
 
 ## Get relationships with where:
 
 ```smalltalk
 (matrix inRelationshipsTyped: 'ACTED_IN' where: [ :start :rel :end | (rel @ 'roles') = #('Neo') ])
-  collect: [ :each | each endNode properties ].
+  collect: [ :each | each tailNode properties ].
 ```
 
 ## Create nodes
@@ -122,4 +122,3 @@ db settings rootUri: 'bolt://127.0.0.1:7687'.
 
 - [Introducing Neo4reSt](https://drive.google.com/file/d/0B-QQfEn6pNsXTzF3UnBZWHA3ZW8/view?usp=sharing)
   - A short presentation on Smalltalkers meeting in Tokyo 2011 December (OLD API)
-
