@@ -10,7 +10,7 @@ testRunCypherWithParams
 		resp := db runCypher: 'RETURN $p' arguments: {#p->3}.
 		self assert: resp oneValue equals: 3.
 
-		cypherWithParams := CyReturn of: 'p' asCypherParameter.
-		resp := db runCypher: cypherWithParams arguments: {#p->4}.
-		self assert: resp oneValue equals: 4.
+		cypherWithParams := CyReturn of: 'p' asCypherParameter, 'q' asCypherParameter.
+		resp := db runCypher: cypherWithParams arguments: {#p->4. #q->5}.
+		self assert: resp values equals: #(4 5).
 	].
