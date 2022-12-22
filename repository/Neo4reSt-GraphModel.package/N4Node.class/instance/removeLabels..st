@@ -5,6 +5,6 @@ removeLabels: labels
 	node := CyNode name: n.
 	paramId := 'id' asCypherParameter. 
 	query := CyQuery match: node where: (n getId equals: paramId) remove: (n labels: labels).
-	result := self db cypherStatusOfContainUpdates: query params: {paramId -> self id}.
+	result := self db cypherStatusOfContainUpdates: query arguments: {paramId -> self id}.
 	result ifTrue: [ self rawGraphObject removeLabels: labels ].
 	^ result

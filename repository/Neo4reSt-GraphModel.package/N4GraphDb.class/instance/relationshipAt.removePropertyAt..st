@@ -7,4 +7,4 @@ relationshipAt: systemId removePropertyAt: key
 	rel := CyRelationship start: s end: e name: r. 
 	query := CyQuery match: rel where: (r getId equals: systemId)
 		remove: (r @ key).
-	^self cypherStatusOfContainUpdates: query params: #()
+	^self cypherStatusOfContainUpdates: query arguments: #()

@@ -1,3 +1,3 @@
 accessing
 type
-	^self rawGraphObject direction
+	^self rawGraphObject type

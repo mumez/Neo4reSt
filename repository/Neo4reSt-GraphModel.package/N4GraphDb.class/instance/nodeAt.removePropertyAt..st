@@ -5,4 +5,4 @@ nodeAt: systemId removePropertyAt: key
 	node := CyNode name: n. 
 	query := CyQuery match: node where: (n getId equals: systemId)
 		remove: (n @ key).
-	^self cypherStatusOfContainUpdates: query params: #()
+	^self cypherStatusOfContainUpdates: query arguments: #()

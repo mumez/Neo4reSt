@@ -1,11 +1,11 @@
 actions-relationships
 relationshipAt: systemId properties: propsDict
-	| s e r rel query params |
+	| s e r rel query args |
 	s := 's' asCypherIdentifier.
 	e := 'e' asCypherIdentifier.
 	r := 'r' asCypherIdentifier.
 	rel := CyRelationship start: s end: e name: r. 
 	query := CyQuery match: rel where: (r getId equals: systemId)
 		set: (r to: 'values' asCypherParameter).
-	params := { 'values' -> propsDict asDictionary } asDictionary.
-	^self cypherStatusOfContainUpdates: query params: params
+	args := { 'values' -> propsDict asDictionary } asDictionary.
+	^self cypherStatusOfContainUpdates: query arguments: args
