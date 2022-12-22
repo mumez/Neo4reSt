@@ -1,5 +1,3 @@
 accessing
 endNodeId
-	"Answer the value of endNodeId"
-
-	^ endNodeId
+	^self rawGraphObject endNodeId

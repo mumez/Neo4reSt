@@ -1,4 +1,4 @@
 releasing
 close
-	self restClient ifNotNil: [:cli | cli release]
+	self httpClient ifNotNil: [:cli | cli release]
 	

@@ -1,3 +1,3 @@
 actions
 removeAllKeyed: key for: graphEntry
-	^self restClient removeNodeIndexes: self name from: key key: graphEntry id
+	^self httpClient removeNodeIndexes: self name from: key key: graphEntry id

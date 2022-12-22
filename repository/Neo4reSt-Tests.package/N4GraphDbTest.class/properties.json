@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Neo4reSt-Tests",
+	"classinstvars" : [
+		"defaultSettings"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "N4GraphDbTest",
+	"type" : "normal"
+}

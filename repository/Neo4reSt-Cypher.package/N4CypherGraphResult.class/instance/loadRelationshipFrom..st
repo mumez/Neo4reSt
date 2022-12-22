@@ -1,0 +1,3 @@
+loading
+loadRelationshipFrom: relationshipDict
+	^ N4RawRelationship loadFromDictionary: relationshipDict

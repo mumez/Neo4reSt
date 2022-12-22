@@ -1,3 +1,6 @@
 properties
 propertyAt: propName put: value
-	^ self restClient setProperty: propName to: value relationshipAt: self id 
+	| result |
+	result := self db relationshipAt: self id propertyAt: propName put: value.
+	result ifTrue: [ self rawGraphObject propertyAt: propName put: value ].
+	^ result 

@@ -2,6 +2,6 @@ printing
 printElementHeaderOn: aStream
 	aStream nextPutAll: self elementName.
 	aStream nextPut: $[.
-	self restClient rootUri printOn: aStream.
+	self httpClient rootUri printOn: aStream.
 	aStream nextPut: $]
 	

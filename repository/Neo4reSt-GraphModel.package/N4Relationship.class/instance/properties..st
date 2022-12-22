@@ -1,3 +1,6 @@
 properties
 properties: propAssocs
-	^ self restClient setProperties: propAssocs relationshipAt: self id
+	| result |
+	result := self db relationshipAt: self id properties: propAssocs.
+	result ifTrue: [ self rawGraphObject properties: propAssocs ].
+	^ result 

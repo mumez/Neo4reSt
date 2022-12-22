@@ -1,3 +1,3 @@
 accessing
 supportV4
-	^self at: #supportV4 ifAbsentPut: [false]
+	^self at: #supportV4 ifAbsentPut: [true]
