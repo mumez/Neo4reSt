@@ -5,7 +5,7 @@ testReturnFromLargeCypher
 		padding := String new: 1024 * 100 withAll: Character space.
 		mSecs := Time millisecondClockValue.
 		cypher := ('WITH ', mSecs asString, ' as A', padding, 'RETURN A').
-		resp := db queryByCypher: cypher.
+		resp := db runCypher: cypher.
 		self assert: resp hasErrors not.
-		self assert: (resp result data first at: 'row') equals: (Array with: mSecs).
+		self assert: resp oneValue equals: mSecs.
 	].

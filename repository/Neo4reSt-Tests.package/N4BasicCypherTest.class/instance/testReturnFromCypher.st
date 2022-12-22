@@ -3,7 +3,7 @@ testReturnFromCypher
 	self dbDo: [ :db | 
 		| cypher resp |
 		cypher := 'WITH 123 as A RETURN A'.
-		resp := db queryByCypher: cypher.
+		resp := db runCypher: cypher.
 		self assert: resp hasErrors not.
-		self assert: (resp result data first at: 'row') equals: #(123).
+		self assert: resp oneValue equals: 123.
 	].
