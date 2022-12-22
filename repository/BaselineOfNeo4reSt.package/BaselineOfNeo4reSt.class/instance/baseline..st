@@ -7,12 +7,12 @@ baseline: spec
 		spec 
 			package: 'Neo4reSt-Core';
 			package: 'Neo4reSt-Client' with: [ spec requires: #('Neo4reSt-Core')];
-			package: 'Neo4reSt-GraphModel' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
+			package: 'Neo4reSt-GraphModel' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client' 'SCypher')];
 			package: 'Neo4reSt-IndexModel' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
 			package: 'Neo4reSt-Traversal' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
 			package: 'Neo4reSt-Cypher' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
 			package: 'Neo4reSt-Demo-Dumper' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
-			package: 'Neo4reSt-Tests' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')].
+			package: 'Neo4reSt-Tests' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client' 'Neo4reSt-GraphModel' 'Neo4reSt-Cypher')].
 		spec
 			group: 'default' with: #('Core' 'Tests');
 			group: 'Core' with: #('Neo4reSt-Core' 'Neo4reSt-Client' 'Neo4reSt-GraphModel'  'Neo4reSt-Cypher');
