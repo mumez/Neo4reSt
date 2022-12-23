@@ -1,4 +1,6 @@
-accessing
+accessing-rows
 values
-	self rows size > 1 ifTrue: [ ^self allValues ].
-	^ self firstRowDo: [:row | row ]
+	| values |
+	values := OrderedCollection new.
+	self allRowsDo: [:row | values add: (self firstOrAllOf: row)].
+	^ self firstOrAllOf: values

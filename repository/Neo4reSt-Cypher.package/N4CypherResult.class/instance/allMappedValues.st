@@ -1,4 +1,4 @@
-accessing
+accessing-rows
 allMappedValues
 	| mappedValues |
 	mappedValues := OrderedCollection new.
