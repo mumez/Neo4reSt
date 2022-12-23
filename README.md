@@ -1,11 +1,12 @@
 # Neo4reSt
-A REST client/object wrapper of Neo4j graph database for Pharo and Squeak
+
+High level Neo4j graph database client for Pharo and Squeak
 
 ## Features
 
-- Raw rest client
-- Wrapper client which handles JSON well
-- Object level wrapper classes (Node, Relationship, Property)
+- Basic http client
+- Object level interfaces for interacting database elements (Node, Relationship, etc) easily
+- Support executing Cypher queries dynamically
 
 
 ## Installation
