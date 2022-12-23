@@ -84,8 +84,9 @@ matrixToAction := matrix relateTo: action typed: 'HAS_GENRE' properties: {'score
 ```smalltalk
 db runCypher: 'UNWIND range(1, 10) AS n RETURN n*n'. "inspect it"
 
-db runCypher: 'UNWIND range($from, $to) AS n RETURN n*n' 
-   arguments: {'from'->2. 'to'->5}. "inspect it"
+resp := db runCypher: 'UNWIND range($from, $to) AS n RETURN n*n' 
+         arguments: {'from'->2. 'to'->5}. 
+resp values. "print it"
 ```
 
 ## Execute dynamically generated Cypher
@@ -106,7 +107,7 @@ return := (p @ 'name'), (o @ 'name'), (m @ 'title').
 query := CyQuery match: pathPattern where: where return: return orderBy: (p @ 'name') skip: 0 limit: 100. "print it"
 
 result := db runCypher: query arguments: { actorNameParam -> 'Tom' }.
-(result fieldValues groupedBy: [ :each | each at: 1 ]). "inspect it"
+(result values groupedBy: [ :each | each at: 1 ]). "inspect it"
 ```
 
 ## Changing IP and port
