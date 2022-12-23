@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "N4RawGraphObject",
+	"category" : "Neo4reSt-Cypher",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"labels"
+	],
+	"name" : "N4RawNode",
+	"type" : "normal"
+}

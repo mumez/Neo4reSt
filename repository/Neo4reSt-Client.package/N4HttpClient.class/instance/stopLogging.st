@@ -1,0 +1,3 @@
+logging
+stopLogging
+	logger := nil

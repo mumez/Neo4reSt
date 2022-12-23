@@ -1,3 +1,6 @@
 properties
 removePropertyAt: propName
-	^ self restClient deleteProperty: propName nodeAt: self id 
+	| result |
+	result := self db nodeAt: self id removePropertyAt: propName.
+	result ifTrue: [ self rawGraphObject removePropertyAt: propName ].
+	^ result 

@@ -1,3 +1,3 @@
-actions-cypher
+actions-cypher-basic
 queryByCypher: queryString
-	^self restClient queryByCypher: queryString
+	^self httpClient queryByCypher: queryString

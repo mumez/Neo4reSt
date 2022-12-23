@@ -3,20 +3,21 @@ baseline: spec
 	<baseline>
 
 	spec for: #common do: [
-
+		self scypher: spec.
 		spec 
 			package: 'Neo4reSt-Core';
 			package: 'Neo4reSt-Client' with: [ spec requires: #('Neo4reSt-Core')];
-			package: 'Neo4reSt-GraphModel' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
+			package: 'Neo4reSt-GraphModel' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client' 'SCypher')];
 			package: 'Neo4reSt-IndexModel' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
 			package: 'Neo4reSt-Traversal' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
 			package: 'Neo4reSt-Cypher' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
 			package: 'Neo4reSt-Demo-Dumper' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')];
-			package: 'Neo4reSt-Tests' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client')].
+			package: 'Neo4reSt-Tests' with: [ spec requires: #('Neo4reSt-Core' 'Neo4reSt-Client' 'Neo4reSt-GraphModel' 'Neo4reSt-Cypher')].
 		spec
 			group: 'default' with: #('Core' 'Tests');
-			group: 'Core' with: #('Neo4reSt-Core' 'Neo4reSt-Client' 'Neo4reSt-GraphModel' 'Neo4reSt-IndexModel' 'Neo4reSt-Traversal' 'Neo4reSt-Cypher');
+			group: 'Core' with: #('Neo4reSt-Core' 'Neo4reSt-Client' 'Neo4reSt-GraphModel'  'Neo4reSt-Cypher');
 			group: 'Demo' with: #('Neo4reSt-Demo-Dumper');
+			group: 'Obsolete' with: #('Neo4reSt-IndexModel' 'Neo4reSt-Traversal');
 			group: 'Tests' with: #('Neo4reSt-Tests')].
 		
 	spec for: #squeak do:[

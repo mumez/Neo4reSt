@@ -2,5 +2,5 @@ actions
 traverseFrom: aNode
 	"to do - implementing traverser"
 	| json |
-	json := self db restClient traverseFrom: startNode id using: self.
+	json := self db httpClient traverseFrom: startNode id using: self.
 	^N4Traverser json: json for: self

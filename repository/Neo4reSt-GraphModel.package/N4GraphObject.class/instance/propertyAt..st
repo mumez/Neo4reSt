@@ -1,2 +1,3 @@
 properties
-propertyAt: propName 
+propertyAt: propName
+	^self rawGraphObject propertyAt: propName

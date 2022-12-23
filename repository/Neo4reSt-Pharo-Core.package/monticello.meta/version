@@ -1,2 +1,0 @@
-(name 'Neo4reSt-Pharo-Core-MasashiUmezawa.1587475825' message 'Implemented new http-helper portable API' id '10959bc6-3766-0d00-87c2-a24409d5f299' date '7 July 2020' time '5:47:18.557968 pm' author 'MasashiUmezawa' ancestors ((name 'Neo4reSt-Pharo-Core-CompatibleUserName.1587475824' message 'Fixed NeoJSON package name
-' id '27cdddef-f1ea-532b-8903-a1e210a66d24' date '21 April 2020' time '10:30:24 pm' author 'CompatibleUserName' ancestors () stepChildren ())) stepChildren ())

@@ -1,6 +1,3 @@
-actions-deprecated
-createNodeLabeled: label
-	| node |
-	node := self createNode.
-	node addLabel: label.
-	^node
+actions-nodes
+createNodeLabeled: labelOrLabels
+	^self createNodeLabeled: labelOrLabels properties: #()

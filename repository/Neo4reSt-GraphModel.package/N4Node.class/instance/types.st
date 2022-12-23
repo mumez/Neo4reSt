@@ -1,3 +1,3 @@
 accessing
 types
-	^ (self allRelationships collect: [:each | each type]) asSet
+	^ (self relationships collect: [:each | each type]) asSet

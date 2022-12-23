@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Neo4reSt-Client",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"rawClient",
+		"settings",
+		"logger"
+	],
+	"name" : "N4HttpClient",
+	"type" : "normal"
+}
