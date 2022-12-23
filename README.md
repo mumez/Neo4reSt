@@ -79,6 +79,10 @@ matrixToSf := matrix relateOneTo: sf typed: 'HAS_GENRE' properties: {'score'-> 6
 matrixToAction := matrix relateTo: action typed: 'HAS_GENRE' properties: {'score'-> 7}. 
 ```
 
+```
+matrix outRelationships collect: [ :each | each properties ]. "Now you can get genre relationships"
+```
+
 ## Execute Cypher directly
 
 ```smalltalk
@@ -113,7 +117,8 @@ result := db runCypher: query arguments: { actorNameParam -> 'Tom' }.
 ## Changing IP and port
 
 ```smalltalk
-db settings rootUri: 'bolt://127.0.0.1:7687'.
+db := N4GraphDb new.
+db settings rootUri: 'http://127.0.0.1:7474/'.
 ```
 
 ## Other Documents
