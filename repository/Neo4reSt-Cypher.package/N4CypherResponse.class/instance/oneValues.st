@@ -1,4 +1,3 @@
 accessing-results
-values
-	self results size > 1 ifTrue: [ ^self allValues ].
+oneValues
 	^self resultDo: [:result | result values]
