@@ -1,3 +1,0 @@
-constants
-nameNoneAssoc
-	^'name' -> 'none'

@@ -1,3 +1,0 @@
-constants
-javascriptLanguageAssoc
-	^'language' -> 'javascript'

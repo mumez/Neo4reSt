@@ -1,3 +1,0 @@
-constants
-directionInAssoc
-	^'direction' -> 'in'

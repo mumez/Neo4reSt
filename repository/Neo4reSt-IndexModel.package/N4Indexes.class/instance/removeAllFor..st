@@ -1,2 +1,0 @@
-actions
-removeAllFor: graphObject

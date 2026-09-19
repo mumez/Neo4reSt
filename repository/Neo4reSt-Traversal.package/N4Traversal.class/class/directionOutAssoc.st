@@ -1,3 +1,0 @@
-constants
-directionOutAssoc
-	^'direction' -> 'out'

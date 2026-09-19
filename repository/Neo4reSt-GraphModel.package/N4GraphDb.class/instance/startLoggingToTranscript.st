@@ -1,3 +1,0 @@
-logging
-startLoggingToTranscript
-	self httpClient startLoggingToTranscript
