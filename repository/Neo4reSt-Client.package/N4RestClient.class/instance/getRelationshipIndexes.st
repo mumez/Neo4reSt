@@ -1,3 +1,0 @@
-actions
-getRelationshipIndexes
-	^ self rawClient getRelationshipIndexes

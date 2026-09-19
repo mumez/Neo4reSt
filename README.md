@@ -14,7 +14,7 @@ High level Neo4j graph database client for Pharo and Squeak
 ```smalltalk
 Metacello new
   baseline: 'Neo4reSt';
-  repository: 'github://mumez/Neo4reSt/repository';
+  repository: 'github://mumez/Neo4reSt/src';
   load.
 ```
 

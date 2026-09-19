@@ -1,3 +1,0 @@
-actions-cypher-basic
-queryByCyphersWithArguments: queryStringsWithArguments
-	^self httpClient queryByCyphersWithParams: queryStringsWithArguments

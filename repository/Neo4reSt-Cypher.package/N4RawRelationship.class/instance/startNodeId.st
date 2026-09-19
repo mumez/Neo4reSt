@@ -1,4 +1,0 @@
-accessing
-startNodeId
-
-	^ startNodeId
