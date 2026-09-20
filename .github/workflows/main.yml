@@ -1,0 +1,47 @@
+name: smalltalkCI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    services:
+      neo4j:
+        image: neo4j:community
+        ports:
+          - "7474:7474"
+          - "7687:7687"
+        env:
+          NEO4J_AUTH: neo4j/neo4j
+        options: >-
+          --health-cmd "cypher-shell -u neo4j -p neo4j 'RETURN 1'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+    strategy:
+      fail-fast: false
+      matrix:
+        smalltalk: [Pharo64-13, Pharo64-14, Squeak64-trunk]
+        experimental: [false]
+      continue-on-error: ${{ matrix.experimental }}
+    name: ${{ matrix.smalltalk }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: hpi-swa/setup-smalltalkCI@1.6.0
+        with:
+          smalltalk-image: ${{ matrix.smalltalk }}
+      - name: Wait for Neo4j
+        run: timeout 120 bash -c 'until wget -q -O /dev/null http://localhost:7474; do sleep 2; done'
+      - name: Run tests
+        run: smalltalkci -s ${{ matrix.smalltalk }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        timeout-minutes: 30
