@@ -1,0 +1,13 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'Neo4reSt',
+      #directory : 'src',
+      #load : [ 'Tests' ],
+      #onConflict : #useLoaded,
+      #useLatestMetacello : false,
+      #onWarningLog : true
+    }
+  ],
+  #postLoading : 'scripts/ci-postLoading.st'
+}
