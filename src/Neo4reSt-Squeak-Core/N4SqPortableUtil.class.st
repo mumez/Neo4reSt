@@ -20,7 +20,10 @@ N4SqPortableUtil >> convertToNative: value using: settings [
 
 { #category : #factories }
 N4SqPortableUtil >> createHttpClient [
-	^WebClient new
+	| client |
+	client := WebClient new.
+	self httpSetAuthenticationInfoTo: client.
+	^ client
 ]
 
 { #category : #accessing }
@@ -40,7 +43,7 @@ N4SqPortableUtil >> getJsonFrom: urlString [
 
 { #category : #accessing }
 N4SqPortableUtil >> httpClient [
-	^  N4Settings default keepConnection
+	^ self settings keepConnection
 		ifTrue: [self ensuredHttpClient]
 		ifFalse: [self createHttpClient]
 ]
@@ -130,6 +133,16 @@ N4SqPortableUtil >> release [
 N4SqPortableUtil >> releaseHttpClient [
 	httpClient ifNotNil: [httpClient destroy].
 	httpClient := nil
+]
+
+{ #category : #'actions-http-helper' }
+N4SqPortableUtil >> httpSetAuthenticationInfoTo: aWebClient [
+	| se |
+	(se := self settings) useAuthentication ifFalse: [^self].
+	aWebClient authParams: (Dictionary new
+		at: #username put: se username;
+		at: #password put: se password;
+		yourself)
 ]
 
 { #category : #'error handling' }
