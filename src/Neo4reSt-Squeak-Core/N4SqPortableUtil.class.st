@@ -139,7 +139,10 @@ N4SqPortableUtil >> releaseHttpClient [
 N4SqPortableUtil >> httpSetAuthenticationInfoTo: aWebClient [
 	| se |
 	(se := self settings) useAuthentication ifFalse: [^self].
-	aWebClient username: se username password: se password
+	aWebClient authParams: (Dictionary new
+		at: #username put: se username;
+		at: #password put: se password;
+		yourself)
 ]
 
 { #category : #'error handling' }
