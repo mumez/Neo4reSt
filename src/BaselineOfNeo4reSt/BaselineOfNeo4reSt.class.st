@@ -36,7 +36,8 @@ BaselineOfNeo4reSt >> baseline: spec [
 			package: 'WebClient-Core' with: [
 				spec repository: 'http://www.squeaksource.com/WebClient' 
 			].
-		spec package: 'Neo4reSt-Squeak-Core' with: [spec requires: 'WebClient-Core'].
+		spec package: 'Neo4reSt-Squeak-Core' with: [ spec requires: #('WebClient-Core' 'JSON') ].
+		spec package: 'Neo4reSt-Core' with: [ spec includes: 'Neo4reSt-Squeak-Core' ].
 		spec group: 'Core' with: #('Neo4reSt-Squeak-Core').	
 	].
 
