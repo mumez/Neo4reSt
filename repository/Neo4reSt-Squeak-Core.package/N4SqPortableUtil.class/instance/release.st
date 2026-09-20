@@ -1,3 +1,0 @@
-releasing
-release
-	self releaseHttpClient

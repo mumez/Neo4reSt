@@ -1,3 +1,0 @@
-constants
-nameAllAssoc
-	^'name' -> 'all'

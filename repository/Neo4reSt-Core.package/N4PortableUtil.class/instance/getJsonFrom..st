@@ -1,4 +1,0 @@
-actions
-getJsonFrom: urlString
-
-	

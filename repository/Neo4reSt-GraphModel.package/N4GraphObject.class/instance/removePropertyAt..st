@@ -1,2 +1,0 @@
-properties
-removePropertyAt: propName
