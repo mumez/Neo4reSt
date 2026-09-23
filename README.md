@@ -56,14 +56,14 @@ matrix inRelationships.
 matrix outRelationships.
 
 (matrix inRelationshipsTyped: 'ACTED_IN')
-  collect: [:each | each tailNode @ 'name']. 
+  collect: [:each | each startNode @ 'name']. 
 ```
 
 ## Get relationships with where:
 
 ```smalltalk
 (matrix inRelationshipsTyped: 'ACTED_IN' where: [ :start :rel :end | (rel @ 'roles') = #('Neo') ])
-  collect: [ :each | each tailNode properties ].
+  collect: [ :each | each startNode properties ].
 ```
 
 ## Create nodes
