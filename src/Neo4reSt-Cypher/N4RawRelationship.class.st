@@ -3,7 +3,7 @@ Class {
 	#superclass : 'N4RawGraphObject',
 	#instVars : [
 		'type',
-		'direction',
+		'relativeDirection',
 		'startNodeId',
 		'endNodeId'
 	],
@@ -13,29 +13,29 @@ Class {
 
 { #category : 'actions' }
 N4RawRelationship >> beBoth [
-	^self direction: #both
+	^self relativeDirection: #both
 ]
 
 { #category : 'actions' }
 N4RawRelationship >> beIn [
-	^self direction: #in
+	^self relativeDirection: #in
 ]
 
 { #category : 'actions' }
 N4RawRelationship >> beOut [
-	^self direction: #out
+	^self relativeDirection: #out
 ]
 
 { #category : 'accessing' }
-N4RawRelationship >> direction [
+N4RawRelationship >> relativeDirection [
 
-	^ direction
+	^ relativeDirection
 ]
 
 { #category : 'accessing' }
-N4RawRelationship >> direction: anObject [
+N4RawRelationship >> relativeDirection: anObject [
 
-	direction := anObject
+	relativeDirection := anObject
 ]
 
 { #category : 'printing' }
@@ -76,11 +76,11 @@ N4RawRelationship >> printOn: aStream [
 	aStream nextPutAll: self startNodeId asString.
 	aStream nextPut: $).
 	aStream space.
-	self direction == #in ifTrue: [aStream nextPut: $<].
+	self relativeDirection == #in ifTrue: [aStream nextPut: $<].
 	aStream nextPut: $-.
 	aStream nextPutAll: self type asString.
 	aStream nextPut: $-.
-	self direction == #out ifTrue: [aStream nextPut: $>].
+	self relativeDirection == #out ifTrue: [aStream nextPut: $>].
 	aStream space.
 	aStream nextPut: $(.
 	aStream nextPutAll: self endNodeId asString.
