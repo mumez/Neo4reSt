@@ -124,7 +124,7 @@ db settings rootUri: 'http://127.0.0.1:7474/'.
 
 ## Other Documents
 
-- [Interacting with Neo4j from Pharo Smalltalk](https://hashnode.com/post/interacting-with-neo4j-from-pharo-smalltalk-ckltglsqq085o10s14bkhfhke)
+- [Interacting with Neo4j from Pharo Smalltalk](https://umejava.wordpress.com/2021/03/01/528/)
   - Actually, it is the introduction of SCypherGraph, another Neo4j client using FFI. However, the API is almost the same.
 
 - [Introducing Neo4reSt](https://drive.google.com/file/d/0B-QQfEn6pNsXTzF3UnBZWHA3ZW8/view?usp=sharing)

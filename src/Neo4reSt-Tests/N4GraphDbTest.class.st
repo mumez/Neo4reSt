@@ -159,8 +159,8 @@ N4GraphDbTest >> testCreateDeleteRelationships [
 		outRelRetrieved := db relationshipAt: outRelCreated id.
 		self assert: inRelRetrieved id equals: inRelCreated id.
 		self assert: outRelRetrieved id equals: outRelCreated id.
-		self assert: inRelCreated direction equals: #in.
-		self assert: outRelCreated direction equals: #out.
+		self assert: inRelCreated relativeDirection equals: #in.
+		self assert: outRelCreated relativeDirection equals: #out.
 		self assert: (inRelRetrieved propertyAt: #a) equals: 1.
 		self assert: (outRelRetrieved propertyAt: #a) equals: 2.
 		deletedInRel := inRelRetrieved delete.
@@ -428,13 +428,9 @@ N4GraphDbTest >> testRelationshipNodes [
 		
 		self assert: (inRel startNode @ 'name') equals: 'name-out'.
 		self assert: (inRel endNode @ 'name') equals: 'name-in'.
-		self assert: (inRel headNode @ 'name') equals: 'name-in'.
-		self assert: (inRel tailNode @ 'name') equals: 'name-out'.
-		
+
 		self assert: (outRel startNode @ 'name') equals: 'name-in'.
 		self assert: (outRel endNode @ 'name') equals: 'name-out'.
-		self assert: (outRel headNode @ 'name') equals: 'name-out'.
-		self assert: (outRel tailNode @ 'name') equals: 'name-in'.
 		
 		node1 deleteWithRelations.
 		node2 deleteWithRelations.

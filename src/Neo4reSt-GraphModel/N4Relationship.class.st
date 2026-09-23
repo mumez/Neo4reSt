@@ -7,37 +7,39 @@ Class {
 
 { #category : 'instance creation' }
 N4Relationship class >> json: jsonObject [
+	"Obsolete: only used by Neo4reSt-IndexModel, which is in the baseline's Obsolete group. Currently broken (missing setters), to be removed along with that package."
 	| inst |
 	inst := self new.
 	inst id: (self portableUtil pickIdFrom: (jsonObject at: 'self')).
 	inst type: (jsonObject at: 'type').
-	inst startNodeId: (self portableUtil pickIdFrom: (jsonObject at: 'start')). 
-	inst endNodeId: (self portableUtil pickIdFrom: (jsonObject at: 'end')). 
-	
+	inst startNodeId: (self portableUtil pickIdFrom: (jsonObject at: 'start')).
+	inst endNodeId: (self portableUtil pickIdFrom: (jsonObject at: 'end')).
+
 	^inst
 ]
 
 { #category : 'instance creation' }
 N4Relationship class >> json: jsonObject for: startNode [
+	"Obsolete: only used by Neo4reSt-Traversal, which is in the baseline's Obsolete group. Currently broken (missing setters), to be removed along with that package."
 	| inst |
 	inst := self new.
 	inst id: (self portableUtil pickIdFrom: (jsonObject at: 'self')).
 	inst type: (jsonObject at: 'type').
-	inst startNodeId: (self portableUtil pickIdFrom: (jsonObject at: 'start')). 
-	inst endNodeId: (self portableUtil pickIdFrom: (jsonObject at: 'end')). 
-	inst direction: ((inst startNodeId = startNode id) ifTrue: [#out] ifFalse: [#in]). 
+	inst startNodeId: (self portableUtil pickIdFrom: (jsonObject at: 'start')).
+	inst endNodeId: (self portableUtil pickIdFrom: (jsonObject at: 'end')).
+	inst relativeDirection: ((inst startNodeId = startNode id) ifTrue: [#out] ifFalse: [#in]).
 	inst db: startNode db.
 	^inst
 ]
 
 { #category : 'actions' }
 N4Relationship >> delete [
-	^self db deleteRelationshipAt: self id 
+	^self db deleteRelationshipAt: self id
 ]
 
 { #category : 'accessing' }
-N4Relationship >> direction [
-	^self rawGraphObject direction
+N4Relationship >> relativeDirection [
+	^self rawGraphObject relativeDirection
 ]
 
 { #category : 'printing' }
@@ -55,23 +57,12 @@ N4Relationship >> endNodeId [
 	^self rawGraphObject endNodeId
 ]
 
-{ #category : 'accessing' }
-N4Relationship >> headNode [
-	^ self db nodeAt: self headNodeId
-]
-
-{ #category : 'accessing' }
-N4Relationship >> headNodeId [
-	self direction == #in ifTrue: [ self startNodeId ].
-	^ self endNodeId
-]
-
 { #category : 'properties' }
 N4Relationship >> mergeProperties: propAssocs [
 	| result |
 	result := self db relationshipAt: self id mergeProperties: propAssocs.
 	result ifTrue: [ self rawGraphObject mergeProperties: propAssocs ].
-	^ result 
+	^ result
 ]
 
 { #category : 'printing' }
@@ -82,11 +73,11 @@ N4Relationship >> printOn: aStream [
 	aStream nextPutAll: self startNodeId asString.
 	aStream nextPut: $).
 	aStream space.
-	self direction == #in ifTrue: [aStream nextPut: $<].
+	self relativeDirection == #in ifTrue: [aStream nextPut: $<].
 	aStream nextPut: $-.
 	aStream nextPutAll: self type asString.
 	aStream nextPut: $-.
-	self direction == #out ifTrue: [aStream nextPut: $>].
+	self relativeDirection == #out ifTrue: [aStream nextPut: $>].
 	aStream space.
 	aStream nextPut: $(.
 	aStream nextPutAll: self endNodeId asString.
@@ -98,7 +89,7 @@ N4Relationship >> properties: propAssocs [
 	| result |
 	result := self db relationshipAt: self id properties: propAssocs.
 	result ifTrue: [ self rawGraphObject properties: propAssocs ].
-	^ result 
+	^ result
 ]
 
 { #category : 'properties' }
@@ -106,7 +97,7 @@ N4Relationship >> propertyAt: propName put: value [
 	| result |
 	result := self db relationshipAt: self id propertyAt: propName put: value.
 	result ifTrue: [ self rawGraphObject propertyAt: propName put: value ].
-	^ result 
+	^ result
 ]
 
 { #category : 'loading' }
@@ -121,7 +112,7 @@ N4Relationship >> removePropertyAt: propName [
 	| result |
 	result := self db relationshipAt: self id removePropertyAt: propName.
 	result ifTrue: [ self rawGraphObject removePropertyAt: propName ].
-	^ result 
+	^ result
 ]
 
 { #category : 'accessing' }
@@ -132,17 +123,6 @@ N4Relationship >> startNode [
 { #category : 'accessing' }
 N4Relationship >> startNodeId [
 	^self rawGraphObject startNodeId
-]
-
-{ #category : 'accessing' }
-N4Relationship >> tailNode [
-	^ self db nodeAt: self tailNodeId
-]
-
-{ #category : 'accessing' }
-N4Relationship >> tailNodeId [
-	self direction == #in ifTrue: [ self endNodeId ].
-	^ self startNodeId
 ]
 
 { #category : 'accessing' }
