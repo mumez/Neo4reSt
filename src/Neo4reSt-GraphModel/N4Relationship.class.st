@@ -7,6 +7,7 @@ Class {
 
 { #category : 'instance creation' }
 N4Relationship class >> json: jsonObject [
+	"Obsolete: only used by Neo4reSt-IndexModel, which is in the baseline's Obsolete group. Currently broken (missing setters), to be removed along with that package."
 	| inst |
 	inst := self new.
 	inst id: (self portableUtil pickIdFrom: (jsonObject at: 'self')).
@@ -19,6 +20,7 @@ N4Relationship class >> json: jsonObject [
 
 { #category : 'instance creation' }
 N4Relationship class >> json: jsonObject for: startNode [
+	"Obsolete: only used by Neo4reSt-Traversal, which is in the baseline's Obsolete group. Currently broken (missing setters), to be removed along with that package."
 	| inst |
 	inst := self new.
 	inst id: (self portableUtil pickIdFrom: (jsonObject at: 'self')).
