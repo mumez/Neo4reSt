@@ -1,8 +1,40 @@
+"
+I am the Pharo-specific N4PortableUtil, providing HTTP access via Zinc's ZnClient.
+
+Responsibility:
+- I build and issue HTTP requests (GET/POST/PUT/DELETE) for Neo4j's REST API.
+- When settings keepConnection is true, I hold one persistent ZnClient per
+  instance, reusing it across requests and resetting its state (entity,
+  streaming header, content writer) before each reuse; #close closes it.
+- When settings keepConnection is false, each request gets its own one-shot
+  ZnClient that is closed immediately after use.
+- I serialize access to my cached ZnClient with a mutex, so a single
+  instance can be shared safely across concurrent callers.
+
+Collaborators:
+- ZnClient: the actual HTTP client I create, reuse, and close.
+- N4Settings: tells me whether to keep the connection alive and whether to
+  stream responses.
+
+Public API and Key Messages:
+- #httpClientDo: - runs a block with an appropriate ZnClient (reused or
+  one-shot, per settings keepConnection).
+- #close - closes and discards my cached ZnClient, if any.
+
+Implementation Points:
+- My cached ZnClient lives for the lifetime of the N4PhPortableUtil
+  instance (one per N4RawClient), not for the shared N4PortableUtil
+  default singleton, which never performs HTTP requests itself.
+- A dropped keep-alive connection needs no extra retry here: ZnClient's
+  #getConnectionAndExecute opens a new connection when the cached one is no
+  longer connected, or when a request on the reused connection fails.
+"
 Class {
 	#name : 'N4PhPortableUtil',
 	#superclass : 'N4PortableUtil',
 	#instVars : [
-		'httpClient'
+		'httpClient',
+		'mutex'
 	],
 	#category : 'Neo4reSt-Pharo-Core',
 	#package : 'Neo4reSt-Pharo-Core'
@@ -27,6 +59,39 @@ N4PhPortableUtil >> createHttpClient [
 	cli := ZnClient new.
 	self settings keepConnection ifFalse: [ cli beOneShot ].
 	^cli
+]
+
+{ #category : 'testing' }
+N4PhPortableUtil >> httpClient [
+	^ httpClient
+]
+
+{ #category : 'actions-http-helper' }
+N4PhPortableUtil >> httpClientDo: aBlock [
+	^ self settings keepConnection
+		ifTrue: [ self reusedHttpClientDo: aBlock ]
+		ifFalse: [ self oneShotHttpClientDo: aBlock ]
+]
+
+{ #category : 'private' }
+N4PhPortableUtil >> mutex [
+	^ mutex ifNil: [ mutex := Mutex new ]
+]
+
+{ #category : 'actions-http-helper' }
+N4PhPortableUtil >> oneShotHttpClientDo: aBlock [
+	| cli |
+	cli := self createHttpClient.
+	^ [ aBlock value: cli ] ensure: [ cli close ]
+]
+
+{ #category : 'actions-http-helper' }
+N4PhPortableUtil >> reusedHttpClientDo: aBlock [
+	^ self mutex critical: [
+		| cli |
+		cli := httpClient ifNil: [ httpClient := self createHttpClient ].
+		cli resetForReuse.
+		aBlock value: cli ]
 ]
 
 { #category : 'converting' }
@@ -130,6 +195,13 @@ N4PhPortableUtil >> jsonStringFrom: valueOrAssocs [
 		ifFalse: [param := valueOrAssocs].
 	rawJsonString := NeoJSONWriter toString: param.
 	^ rawJsonString
+]
+
+{ #category : 'releasing' }
+N4PhPortableUtil >> close [
+	self mutex critical: [
+		httpClient ifNotNil: [ :cli | cli close ].
+		httpClient := nil ]
 ]
 
 { #category : 'actions' }

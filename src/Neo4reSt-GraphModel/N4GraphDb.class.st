@@ -1,3 +1,28 @@
+"
+I represent a Neo4j graph database and am the main entry point for running
+Cypher queries and graph operations against it.
+
+Responsibility:
+- I build and run Cypher queries (nodes, relationships, labels, counts,
+  deletions, merges, pagination, raw Cypher strings) via my httpClient.
+- With settings keepConnection true, I hold one persistent HTTP connection
+  for my lifetime, opened lazily on first use; sending #close releases it.
+  With keepConnection false, every request opens and closes its own
+  one-shot connection.
+- Access to my connection is serialized by a mutex, so a single instance
+  can be shared safely across concurrent callers.
+
+Collaborators:
+- N4HttpClient: performs the actual HTTP/Cypher requests on my behalf.
+- N4Settings: configures the connection (rootUri, authentication,
+  keepConnection, streaming).
+- CyQuery and friends: build the Cypher queries I send.
+
+Public API and Key Messages:
+- #allLabels, #allRelationshipTypes - list labels/relationship types.
+- #runCypher:, #queryByCypher: - run raw Cypher.
+- #close - releases my underlying HTTP connection, if one is held.
+"
 Class {
 	#name : 'N4GraphDb',
 	#superclass : 'N4Object',
@@ -37,8 +62,9 @@ N4GraphDb >> allRelationshipTypes [
 
 { #category : 'releasing' }
 N4GraphDb >> close [
-	self httpClient ifNotNil: [:cli | cli release]
-	
+	"Reads the ivar directly (not self httpClient) to avoid lazily creating one just to close it."
+	httpClient ifNotNil: [:cli | cli close]
+
 ]
 
 { #category : 'global operations' }

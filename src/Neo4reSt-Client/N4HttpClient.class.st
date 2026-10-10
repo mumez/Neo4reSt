@@ -1,3 +1,28 @@
+"
+I am the main entry point for sending Cypher queries over HTTP to a Neo4j server.
+
+Responsibility:
+- I build and run Cypher transaction statements (single or batched) and parse
+  the resulting N4CypherResponse.
+- I delegate the actual HTTP/JSON transport to my rawClient, and expose its
+  portableUtil and connection settings.
+- I optionally log every query I run via my logger block.
+
+Collaborators:
+- N4RawClient: performs the low-level HTTP requests and JSON (de)serialization
+  on my behalf; I hold one as rawClient, created lazily on first use.
+- N4CypherResponse: wraps the JSON response from a Cypher call.
+- N4Settings: configures rootUri, authentication, and keepConnection.
+
+Public API and Key Messages:
+- #runCypher:, #runCypher:params:, #graphCypher: - run a single Cypher query.
+- #queryByCyphers:, #queryByCyphersUsing: - run multiple statements in one call.
+- #close - releases my underlying HTTP connection, if one is held.
+
+Implementation Points:
+- #close reads rawClient directly (not via the lazy self rawClient accessor)
+  so that closing a client that never ran a query does not create one first.
+"
 Class {
 	#name : 'N4HttpClient',
 	#superclass : 'Object',
@@ -31,8 +56,9 @@ N4HttpClient >> applySettings: aNgSettings [
 
 { #category : 'releasing' }
 N4HttpClient >> close [
-	self rawClient ifNotNil: [:cli | cli release]
-	
+	"Reads the ivar directly (not self rawClient) to avoid lazily creating one just to close it."
+	rawClient ifNotNil: [:cli | cli close]
+
 ]
 
 { #category : 'accessing' }
