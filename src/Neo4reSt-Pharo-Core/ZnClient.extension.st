@@ -34,6 +34,15 @@ ZnClient >> jsonPost: urlString withStreaming: withStreamingOrNot [
 ]
 
 { #category : '*Neo4reSt-Pharo-Core' }
+ZnClient >> resetForReuse [
+	"Clear per-request state left over from a previous use of this (kept-alive) client,
+	so it does not leak into the next unrelated request."
+	self resetEntity.
+	self request headers removeKey: 'X-Stream' ifAbsent: [].
+	self contentWriter: nil
+]
+
+{ #category : '*Neo4reSt-Pharo-Core' }
 ZnClient >> jsonPut: urlString content: jsonString [
 	self accept: 'application/json'.
 	self contentWriter: [:o | (ZnEntity with: o) contentType: 'application/json; charset=utf-8'].

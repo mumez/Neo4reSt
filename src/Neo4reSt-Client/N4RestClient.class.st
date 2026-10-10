@@ -1,3 +1,6 @@
+"
+I am obsolete and kept only for backward compatibility. Use N4HttpClient instead.
+"
 Class {
 	#name : 'N4RestClient',
 	#superclass : 'Object',
