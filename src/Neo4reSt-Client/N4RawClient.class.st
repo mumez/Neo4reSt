@@ -1,3 +1,34 @@
+"
+I perform the low-level HTTP requests against Neo4j's transaction/Cypher
+endpoint and the legacy (deprecated) REST endpoints.
+
+Responsibility:
+- I build transaction statement JSON and POST it to the Cypher transaction
+  endpoint, returning the raw HTTP response.
+- I hold the rootUri, databaseName/transactionUri, and settings needed to
+  address a specific Neo4j server and database.
+- I delegate JSON encoding/decoding and the actual HTTP calls to my
+  portableUtil.
+
+Collaborators:
+- N4PortableUtil (actually its Pharo subclass, N4PhPortableUtil): performs
+  the platform HTTP calls and JSON (de)serialization; I hold one as
+  portableUtil, created lazily on first use.
+- N4HttpClient: my usual caller, which builds Cypher queries and interprets
+  my responses as N4CypherResponse.
+
+Public API and Key Messages:
+- #queryByCypher:params:resultDataContents:includeStats: - run one statement.
+- #queryByCyphersUsing: - run a block-built list of statements in one call.
+- #close - releases my underlying HTTP connection, if one is held.
+
+Implementation Points:
+- #close reads portableUtil directly (not via the lazy self portableUtil
+  accessor) so that closing a client that never ran a query does not
+  create one first.
+- My deprecated-* categories implement Neo4j's old non-transactional REST
+  API and are kept only for backward compatibility.
+"
 Class {
 	#name : 'N4RawClient',
 	#superclass : 'Object',
@@ -57,7 +88,8 @@ N4RawClient >> applySettings: aNgSettings [
 
 { #category : 'releasing' }
 N4RawClient >> close [
-	self portableUtil release
+	"Reads the ivar directly (not self portableUtil) to avoid lazily creating one just to close it."
+	portableUtil ifNotNil: [:util | util close]
 ]
 
 { #category : 'deprecated-rest' }
