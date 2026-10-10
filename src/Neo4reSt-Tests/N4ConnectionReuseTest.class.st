@@ -5,6 +5,13 @@ Class {
 	#package : 'Neo4reSt-Tests'
 }
 
+{ #category : 'testing' }
+N4ConnectionReuseTest class >> isAbstract [
+	"These tests exercise the cached ZnClient of N4PhPortableUtil (Pharo only).
+	Exclude them on other dialects (e.g. Squeak) until connection reuse is implemented there"
+	^ N4PortableUtil defaultClass name ~= #N4PhPortableUtil
+]
+
 { #category : 'accessing' }
 N4ConnectionReuseTest >> newSettingsKeepConnection: keepBoolean [
 	| settings |
@@ -20,10 +27,8 @@ N4ConnectionReuseTest >> withDbKeepConnection: keepBoolean do: aBlock [
 
 { #category : 'private' }
 N4ConnectionReuseTest >> withDbSettings: settings do: aBlock [
-	"Note: N4GraphDb>>release/close does not actually reach N4PhPortableUtil>>release
-	(N4HttpClient>>close and N4RawClient both lack a real release/close chain - that
-	wiring is a separate, not-yet-done phase). Release the portableUtil directly here
-	so the underlying ZnClient/socket is always cleaned up after each test."
+	"Release the portableUtil directly so the underlying ZnClient/socket is always
+	cleaned up after each test, even if the test itself fails before closing the db."
 	| db |
 	db := N4GraphDb settings: settings.
 	[ aBlock value: db ] ensure: [ db httpClient portableUtil release ]
@@ -101,11 +106,12 @@ N4ConnectionReuseTest >> testStreamingHeaderDoesNotLeakToNextRequest [
 	self withDbSettings: settings do: [ :db |
 		| cli node |
 		node := db createNodeLabeled: 'N4ConnectionReuseTestTemp'.
-		cli := db httpClient portableUtil httpClient.
-		self assert: (cli request headers includesKey: 'X-Stream').
-		settings useStreaming: false.
-		db allLabels.
-		self deny: (cli request headers includesKey: 'X-Stream').
-		node delete.
+		[
+			cli := db httpClient portableUtil httpClient.
+			self assert: (cli request headers includesKey: 'X-Stream').
+			settings useStreaming: false.
+			db allLabels.
+			self deny: (cli request headers includesKey: 'X-Stream')
+		] ensure: [ node delete ]
 	]
 ]
