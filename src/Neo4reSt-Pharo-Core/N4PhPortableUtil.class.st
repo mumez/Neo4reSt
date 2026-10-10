@@ -5,7 +5,7 @@ Responsibility:
 - I build and issue HTTP requests (GET/POST/PUT/DELETE) for Neo4j's REST API.
 - When settings keepConnection is true, I hold one persistent ZnClient per
   instance, reusing it across requests and resetting its state (entity,
-  streaming header, content writer) before each reuse; #release closes it.
+  streaming header, content writer) before each reuse; #close closes it.
 - When settings keepConnection is false, each request gets its own one-shot
   ZnClient that is closed immediately after use.
 - I serialize access to my cached ZnClient with a mutex, so a single
@@ -19,12 +19,15 @@ Collaborators:
 Public API and Key Messages:
 - #httpClientDo: - runs a block with an appropriate ZnClient (reused or
   one-shot, per settings keepConnection).
-- #release - closes and discards my cached ZnClient, if any.
+- #close - closes and discards my cached ZnClient, if any.
 
 Implementation Points:
 - My cached ZnClient lives for the lifetime of the N4PhPortableUtil
   instance (one per N4RawClient), not for the shared N4PortableUtil
   default singleton, which never performs HTTP requests itself.
+- A dropped keep-alive connection needs no extra retry here: ZnClient's
+  #getConnectionAndExecute opens a new connection when the cached one is no
+  longer connected, or when a request on the reused connection fails.
 "
 Class {
 	#name : 'N4PhPortableUtil',
@@ -195,7 +198,7 @@ N4PhPortableUtil >> jsonStringFrom: valueOrAssocs [
 ]
 
 { #category : 'releasing' }
-N4PhPortableUtil >> release [
+N4PhPortableUtil >> close [
 	self mutex critical: [
 		httpClient ifNotNil: [ :cli | cli close ].
 		httpClient := nil ]

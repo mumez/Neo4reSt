@@ -88,8 +88,8 @@ N4RawClient >> applySettings: aNgSettings [
 
 { #category : 'releasing' }
 N4RawClient >> close [
-	"Reads the ivar directly (not self portableUtil) to avoid lazily creating one just to release it."
-	portableUtil ifNotNil: [:util | util release]
+	"Reads the ivar directly (not self portableUtil) to avoid lazily creating one just to close it."
+	portableUtil ifNotNil: [:util | util close]
 ]
 
 { #category : 'deprecated-rest' }

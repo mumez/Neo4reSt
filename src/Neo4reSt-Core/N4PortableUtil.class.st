@@ -53,6 +53,12 @@ N4PortableUtil >> convertToNative: value using: settingsDict [
 	^value
 ]
 
+{ #category : 'releasing' }
+N4PortableUtil >> close [
+	"Release resources held for HTTP access (e.g. a kept-alive connection)"
+	self release
+]
+
 { #category : 'actions-http-helper' }
 N4PortableUtil >> createHttpClient [
 ]
