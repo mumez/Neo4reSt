@@ -55,8 +55,7 @@ N4PortableUtil >> convertToNative: value using: settingsDict [
 
 { #category : 'releasing' }
 N4PortableUtil >> close [
-	"Release resources held for HTTP access (e.g. a kept-alive connection)"
-	self release
+	"Close the HTTP connection held for reuse, if any. Override in subclasses"
 ]
 
 { #category : 'actions-http-helper' }
@@ -196,6 +195,8 @@ N4PortableUtil >> readJsonFromResponse: httpResponse [
 
 { #category : 'releasing' }
 N4PortableUtil >> release [
+	"Release all held resources, including the HTTP connection"
+	self close
 ]
 
 { #category : 'accessing' }

@@ -125,7 +125,7 @@ N4SqPortableUtil >> readJsonFromResponse: httpResponse [
 ]
 
 { #category : #releasing }
-N4SqPortableUtil >> release [
+N4SqPortableUtil >> close [
 	self releaseHttpClient
 ]
 
